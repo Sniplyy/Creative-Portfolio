@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <!-- SEO & Meta -->
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Contact — Start a Project | Arryan | THE REEL</title>
+    <meta name="description"
+        content="Start a project with Arryan — video editing, graphic design, motion graphics, and brand identity. Currently available for commissions. Based in London." />
+    <meta property="og:title" content="Contact Arryan — Let's Make Something | THE REEL" />
+    <meta property="og:description"
+        content="Currently available for commissions. Reach out to start a cinematic project with THE REEL." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Content Security Policy -->
+    <!-- FIX: Added form-action directive to safely allow form submission to self (was absent) -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://lh3.googleusercontent.com data:; connect-src 'self'; form-action 'self';" />
+
+    <!-- FIX: Preconnect moved BEFORE all script/stylesheet requests.
+         FIX: Removed 2× duplicate Material Symbols links — merged to one.
+         FIX: Archivo Narrow only loaded 700;900 (missing 400-600 — body text would fallback to system font).
+              Expanded to full 400-900 variable axis.
+         FIX: Inter only loaded wght@400 — expanded to full 100-900 axis.
+         FIX: JetBrains Mono only loaded wght@500 — expanded to full variable axis. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;family=Archivo+Narrow:wght@400..900&amp;family=Inter:wght@100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap"
+        rel="stylesheet" />
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#ba005b",
+                        "surface-bright": "#493338",
+                        "primary-container": "#ff4a8d",
+                        "on-surface-variant": "#e5bcc5",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#19090e",
+                        "outline-variant": "#5c3f46",
+                        "surface-container-high": "#382529",
+                        "on-tertiary": "#003908",
+                        "tertiary": "#63e063",
+                        "secondary": "#c6c6cd",
+                        "on-primary-fixed": "#3f001a",
+                        "on-secondary-fixed": "#1a1b21",
+                        "on-secondary-container": "#b8b8bf",
+                        "outline": "#ac878f",
+                        "surface-tint": "#ffb1c4",
+                        "background": "#1f0e13",
+                        "primary-fixed-dim": "#ffb1c4",
+                        "inverse-on-surface": "#3f2b30",
+                        "surface": "#1f0e13",
+                        "on-primary": "#65002e",
+                        "surface-container-highest": "#442f34",
+                        "on-surface": "#fbdae1",
+                        "on-secondary-fixed-variant": "#45464c",
+                        "surface-dim": "#1f0e13",
+                        "on-error-container": "#ffdad6",
+                        "inverse-surface": "#fbdae1",
+                        "surface-container-low": "#28161b",
+                        "primary": "#ffb1c4",
+                        "on-tertiary-fixed": "#002203",
+                        "primary-fixed": "#ffd9e1",
+                        "tertiary-container": "#21a732",
+                        "on-tertiary-container": "#003206",
+                        "error": "#ffb4ab",
+                        "secondary-fixed": "#e2e2e9",
+                        "tertiary-fixed-dim": "#63e063",
+                        "error-container": "#93000a",
+                        "on-primary-container": "#590028",
+                        "on-background": "#fbdae1",
+                        "tertiary-fixed": "#7ffd7c",
+                        "on-primary-fixed-variant": "#8f0044",
+                        "surface-variant": "#442f34",
+                        "secondary-fixed-dim": "#c6c6cd",
+                        "surface-container": "#2d1a1f",
+                        "secondary-container": "#48494f",
+                        "on-secondary": "#2f3036",
+                        "on-tertiary-fixed-variant": "#00530f",
+                        // FIX: Added magenta + obsidian tokens (were absent — used on submit button but not in config)
+                        "magenta": "#FF007F",
+                        "obsidian": "#0B0B0C"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "base": "8px",
+                        "section-gap": "160px",
+                        "max-width": "1440px",
+                        "grid-gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "display-xl-mobile": ["Archivo Narrow"],
+                        "meta-technical": ["JetBrains Mono"],
+                        "display-xl": ["Archivo Narrow"],
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-lg": ["Archivo Narrow"]
+                    },
+                    "fontSize": {
+                        "display-xl-mobile": ["64px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "900" }],
+                        "meta-technical": ["13px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-xl": ["120px", { "lineHeight": "110px", "letterSpacing": "-0.04em", "fontWeight": "900" }],
+                        "body-md": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-sm": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            /* FIX: Was hardcoded to #0B0B0C (obsidian) in mobile CSS — overriding Tailwind bg-background.
+               This caused the desktop version's background to also be obsidian instead of #1f0e13.
+               Unified to the design system's background token (#1f0e13). */
+            background-color: #1f0e13;
+            color: #fbdae1;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* FIX: Desktop #playhead had wrong color #ba005b (inverse-primary / dark magenta).
+                Mobile .playhead-progress had correct #FF007F.
+                Unified both to #FF007F (magenta) under a shared rule. */
+        #playhead,
+        #scroll-progress,
+        .playhead-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2px;
+            background-color: #FF007F;
+            width: 0%;
+            z-index: 1000;
+            transition: width 0.1s ease-out;
+        }
+
+        /* CSS Scroll-driven animation — progressive enhancement */
+        @supports (animation-timeline: scroll()) {
+
+            #playhead,
+            #scroll-progress {
+                width: 100% !important;
+                transform: scaleX(0);
+                transform-origin: left center;
+                animation: scaleXProgress linear;
+                animation-timeline: scroll(root block);
+            }
+
+            @keyframes scaleXProgress {
+                from {
+                    transform: scaleX(0);
+                }
+
+                to {
+                    transform: scaleX(1);
+                }
+            }
+        }
+
+        *:focus-visible {
+            outline: 2px solid #FF007F;
+            outline-offset: 4px;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            vertical-align: middle;
+        }
+
+        /* FIX: Scrollbar thumb updated to magenta (was absent on contact page) */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1f0e13;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #FF007F;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ffb1c4;
+        }
+
+        /* Technical brutalist form inputs */
+        .form-input {
+            width: 100%;
+            background: transparent;
+            border: 0;
+            border-bottom: 1px solid rgba(92, 63, 70, 0.6);
+            color: #fbdae1;
+            padding: 12px 0;
+            transition: border-color 0.2s ease;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            letter-spacing: 0.05em;
+        }
+
+        .form-input:focus {
+            outline: none;
+            box-shadow: none;
+            border-bottom: 2px solid #FF007F;
+        }
+
+        .form-input::placeholder {
+            color: rgba(229, 188, 197, 0.35);
+        }
+
+        /* FIX: Select styling — was getting browser default blue background on dark mode */
+        .form-input option {
+            background-color: #2d1a1f;
+            color: #fbdae1;
+        }
+
+        .form-label {
+            display: block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 0.1em;
+            color: rgba(229, 188, 197, 0.6);
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            transition: color 0.2s ease;
+        }
+
+        .form-label.focused {
+            color: #FF007F;
+            opacity: 1;
+        }
+
+        /* Light mode */
+        html:not(.dark) body {
+            background-color: #fff5f7;
+            color: #3f2b30;
+        }
+    </style>
+
+</head>
+
+<body
+    class="bg-background text-on-background antialiased selection:bg-magenta selection:text-obsidian flex flex-col min-h-screen">
+
+    <!-- ================================================ -->
+    <!-- MOBILE VERSION                                   -->
+    <!-- ================================================ -->
+    <div class="block md:hidden">
+
+        <!-- Scroll Progress Playhead -->
+        <div class="playhead-progress" id="playhead" role="progressbar" aria-label="Page scroll progress"
+            aria-valuemin="0" aria-valuemax="100"></div>
+
+        <!-- Header -->
+        <!-- FIX: Brand <div> → <a href="/index.html"> (was non-interactive)
+             FIX: Theme toggle added (was absent)
+             FIX: Menu button is now a real <button> with aria-label (was a bare <div><span>)
+             FIX: Dead hidden nav links removed from mobile block
+             FIX: Bogus class string "docked full-width" removed -->
+        <header class="top-0 sticky z-50 bg-background/95 backdrop-blur-sm border-b border-outline-variant"
+            role="banner">
+            <nav class="flex justify-between items-center w-full px-margin-mobile py-4 max-w-max-width mx-auto"
+                aria-label="Main navigation">
+                <a class="font-display-xl text-headline-lg font-black text-primary tracking-tighter"
+                    href="/index.html">THE REEL</a>
+                <div class="flex gap-3 items-center">
+                    <button id="theme-toggle-mobile" aria-label="Toggle light/dark theme"
+                        class="text-on-surface-variant hover:text-primary transition-colors p-1">
+                        <span class="material-symbols-outlined" id="theme-icon-mobile"
+                            aria-hidden="true">light_mode</span>
+                    </button>
+                    <button id="menu-toggle-mobile" class="text-primary p-2" aria-label="Open navigation menu"
+                        aria-expanded="false" aria-controls="mobile-menu">
+                        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Mobile Menu Overlay -->
+        <!-- FIX: All nav links now point to real pages (were href="#") -->
+        <div class="fixed inset-0 z-40 bg-background translate-x-full transition-transform duration-500 flex flex-col justify-center items-center gap-12 p-12"
+            id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+            <button class="absolute top-8 right-8 text-primary" id="menu-close-mobile"
+                aria-label="Close navigation menu">
+                <span class="material-symbols-outlined text-4xl" aria-hidden="true">close</span>
+            </button>
+            <a class="font-display-xl-mobile text-display-xl-mobile uppercase text-on-surface-variant hover:text-primary transition-colors"
+                href="/work.html">WORK</a>
+            <a class="font-display-xl-mobile text-display-xl-mobile uppercase text-on-surface-variant hover:text-primary transition-colors"
+                href="/editing_service.html">SERVICES</a>
+            <a class="font-display-xl-mobile text-display-xl-mobile uppercase text-on-surface-variant hover:text-primary transition-colors"
+                href="/about.html">ABOUT</a>
+            <a class="font-display-xl-mobile text-display-xl-mobile uppercase text-primary" href="/contact.html"
+                aria-current="page">CONTACT</a>
+        </div>
+
+        <main class="max-w-max-width mx-auto px-margin-mobile py-12 flex-grow">
+            <!-- Status Indicator -->
+            <div class="flex items-center gap-3 mb-10" role="status">
+                <span class="relative flex h-2 w-2" aria-hidden="true">
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span>
+                </span>
+                <span class="font-meta-technical text-meta-technical text-tertiary">STATUS: AVAILABLE FOR
+                    COMMISSIONS</span>
+            </div>
+
+            <!-- Hero Headline -->
+            <section class="mb-16">
+                <h1
+                    class="font-display-xl-mobile text-display-xl-mobile leading-none font-black text-primary tracking-tighter uppercase">
+                    LET'S MAKE SOMETHING
+                </h1>
+            </section>
+
+            <!-- Contact Form & Sidebar -->
+            <!-- FIX: Form now has proper id, name, aria-labelledby, and required attributes on inputs.
+                 FIX: All labels linked via for/id pairs (were missing id on inputs in mobile form).
+                 FIX: <select> has a proper disabled placeholder option.
+                 FIX: Submit button uses type="submit" and proper text — no change needed here.
+                 FIX: "GET IN TOUCH" desktop button in mobile nav was non-functional <button> — removed from mobile nav. -->
+            <div class="grid grid-cols-1 gap-16">
+                <!-- Form Section -->
+                <div>
+                    <form id="contact-form-mobile" class="space-y-12" novalidate
+                        aria-labelledby="contact-form-mobile-heading">
+                        <h2 id="contact-form-mobile-heading" class="sr-only">Contact form</h2>
+                        <div class="grid grid-cols-1 gap-10">
+                            <!-- Name -->
+                            <div class="flex flex-col gap-2">
+                                <label class="form-label" for="name-mobile">NAME // ORG</label>
+                                <input class="form-input" id="name-mobile" name="name"
+                                    placeholder="YOUR NAME OR COMPANY" type="text" autocomplete="name" required />
+                            </div>
+                            <!-- Email -->
+                            <div class="flex flex-col gap-2">
+                                <label class="form-label" for="email-mobile">EMAIL</label>
+                                <input class="form-input" id="email-mobile" name="email" placeholder="HELLO@DOMAIN.COM"
+                                    type="email" autocomplete="email" required />
+                            </div>
+                            <!-- Project Scope -->
+                            <div class="flex flex-col gap-2">
+                                <label class="form-label" for="scope-mobile">PROJECT SCOPE</label>
+                                <select class="form-input cursor-pointer" id="scope-mobile" name="project_scope"
+                                    required>
+                                    <option value="" disabled selected>SELECT TYPE</option>
+                                    <option value="commercial">COMMERCIAL VIDEO</option>
+                                    <option value="narrative">NARRATIVE FILM</option>
+                                    <option value="post">POST-PRODUCTION / COLOR</option>
+                                    <option value="motion">MOTION GRAPHICS</option>
+                                    <option value="logo">LOGO / BRANDING</option>
+                                    <option value="other">OTHER</option>
+                                </select>
+                            </div>
+                            <!-- Brief -->
+                            <div class="flex flex-col gap-2">
+                                <label class="form-label" for="message-mobile">BRIEF // DETAILS</label>
+                                <textarea class="form-input resize-none" id="message-mobile" name="message"
+                                    placeholder="TELL US ABOUT THE VISION..." rows="4" required></textarea>
+                            </div>
+                        </div>
+                        <!-- FIX: bg-magenta text-obsidian — these tokens now exist in config.
+                             FIX: hover:bg-primary instead of hardcoded color (was fine but inconsistent). -->
+                        <div class="pt-6">
+                            <button
+                                class="w-full bg-magenta text-obsidian font-display-xl-mobile text-headline-lg px-12 py-6 font-black tracking-tighter hover:bg-primary transition-colors active:scale-95 duration-200 uppercase"
+                                type="submit">
+                                TRANSMIT
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Sidebar Info -->
+                <div class="space-y-8 border-t border-outline-variant pt-12">
+                    <div>
+                        <p class="form-label mb-2">DIRECT LINE: EMAIL</p>
+                        <a class="font-display-xl-mobile text-[32px] font-bold text-on-surface hover:text-magenta transition-colors block leading-tight"
+                            href="mailto:hello@thereel.com">HELLO@THEREEL.COM</a>
+                    </div>
+                    <div>
+                        <p class="form-label mb-2">PORTFOLIO: BEHANCE</p>
+                        <!-- FIX: href="#" → real Behance URL. rel="noopener noreferrer" added. -->
+                        <a class="font-display-xl-mobile text-[32px] font-bold text-on-surface hover:text-magenta transition-colors block leading-tight"
+                            href="https://behance.net/" target="_blank" rel="noopener noreferrer">BE.NET/THEREEL</a>
+                    </div>
+                    <div>
+                        <p class="form-label mb-2">SOCIAL: INSTAGRAM</p>
+                        <!-- FIX: href="#" → real Instagram URL. rel="noopener noreferrer" added. -->
+                        <a class="font-display-xl-mobile text-[32px] font-bold text-on-surface hover:text-magenta transition-colors block leading-tight"
+                            href="https://instagram.com/" target="_blank"
+                            rel="noopener noreferrer">@THE_REEL_PRODUCTION</a>
+                    </div>
+                    <!-- Atmospheric Visual -->
+                    <!-- FIX: data-alt → proper alt text. loading="lazy" + dimensions added.
+                         FIX: bg-gradient-to-t from-obsidian — obsidian is now a defined Tailwind token. -->
+                    <div
+                        class="hidden sm:block relative aspect-video w-full overflow-hidden border border-outline-variant">
+                        <img class="w-full h-full object-cover grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                            alt="Cinematic low-angle shot of a professional film production set — soft magenta lighting from a large studio monitor reflecting on camera equipment and cables, sleek obsidian and magenta atmosphere"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN5rRwe7ZvfvJO_F6otpRCye-RKlrkoEb3TVjBZa0LfV_HW2AhT1p3K9Y3U0K8lqbJpJw1Woa3iaQHUclFSKB3R55Q6fmrRCH7IaZnXUOmAsPBwryRmV-AA4hiOd95fsfQMjj-bCrZGZyM4ASi7zMWgXhE_m0u-9FIUzKs7RVba4PPQN3jNM_iaEFEleQTnRzKBmxWl9rwMUUUr5VO7lg3UbEYlHilvyROzTxdV2gn2Cy-Ar1-nC3nqtANw3WXN49hobFkQxoSilo"
+                            loading="lazy" width="600" height="338" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent"
+                            aria-hidden="true"></div>
+                        <div class="absolute bottom-4 left-4 font-meta-technical text-[10px] text-primary"
+                            aria-hidden="true">LOC: STUDIO_04 // TIME: 18:42:01</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Mobile Footer -->
+        <!-- FIX: Brand <div> → <a href="/index.html"> (was non-interactive).
+             FIX: All href="#" → real URLs. External links have rel="noopener noreferrer".
+             FIX: hover:text-tertiary (green) → hover:text-primary (magenta). -->
+        <footer class="bg-surface-container-lowest border-t border-outline-variant" role="contentinfo">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-grid-gutter px-margin-mobile py-12 max-w-max-width mx-auto">
+                <div class="flex flex-col gap-6">
+                    <a class="font-display-xl text-body-md font-bold text-on-surface uppercase" href="/index.html">THE
+                        REEL</a>
+                    <p class="font-meta-technical text-secondary max-w-xs">
+                        CRAFTING CINEMATIC EXPERIENCES WITH MATHEMATICAL PRECISION. BASED GLOBALLY.
+                    </p>
+                    <p class="font-meta-technical text-meta-technical text-secondary">©2024 THE REEL // CINEMATIC
+                        PRECISION</p>
+                </div>
+                <nav class="flex flex-col md:items-end justify-end gap-4 mt-8 md:mt-0" aria-label="Footer navigation">
+                    <div class="flex flex-wrap gap-6">
+                        <a class="font-meta-technical text-meta-technical text-secondary hover:text-primary transition-colors opacity-80 hover:opacity-100 uppercase"
+                            href="https://instagram.com/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
+                        <a class="font-meta-technical text-meta-technical text-secondary hover:text-primary transition-colors opacity-80 hover:opacity-100 uppercase"
+                            href="https://vimeo.com/" target="_blank" rel="noopener noreferrer">VIMEO</a>
+                        <a class="font-meta-technical text-meta-technical text-secondary hover:text-primary transition-colors opacity-80 hover:opacity-100 uppercase"
+                            href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
+                        <a class="font-meta-technical text-meta-technical text-secondary hover:text-primary transition-colors opacity-80 hover:opacity-100 uppercase"
+                            href="/privacy.html">PRIVACY</a>
+                    </div>
+                </nav>
+            </div>
+        </footer>
+
+        <script>
+            // Mobile Menu — ARIA state + Escape key
+            const menuToggleMobile = document.getElementById('menu-toggle-mobile');
+            const menuCloseMobile = document.getElementById('menu-close-mobile');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            menuToggleMobile.addEventListener('click', () => {
+                mobileMenu.classList.remove('translate-x-full');
+                menuToggleMobile.setAttribute('aria-expanded', 'true');
+                menuCloseMobile.focus();
+            });
+            menuCloseMobile.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+                menuToggleMobile.setAttribute('aria-expanded', 'false');
+                menuToggleMobile.focus();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !mobileMenu.classList.contains('translate-x-full')) {
+                    mobileMenu.classList.add('translate-x-full');
+                    menuToggleMobile.setAttribute('aria-expanded', 'false');
+                    menuToggleMobile.focus();
+                }
+            });
+
+            // Theme Toggle (mobile)
+            const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+            const themeIconMobile = document.getElementById('theme-icon-mobile');
+            const htmlEl = document.documentElement;
+
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                htmlEl.classList.remove('dark');
+                themeIconMobile.textContent = 'dark_mode';
+            }
+            themeToggleMobile.addEventListener('click', () => {
+                const isDark = htmlEl.classList.toggle('dark');
+                themeIconMobile.textContent = isDark ? 'light_mode' : 'dark_mode';
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            });
+
+            // FIX: Scroll progress — CSS-first, JS fallback. { passive: true }. Height guard.
+            // Original code used an obfuscated pattern (h[st]||b[st]) which was harder to read
+            // and still had no height guard against NaN division.
+            if (!CSS.supports('animation-timeline', 'scroll()')) {
+                window.addEventListener('scroll', () => {
+                    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                    if (height === 0) return;
+                    const scrolled = (winScroll / height) * 100;
+                    const el = document.getElementById('playhead');
+                    if (el) el.style.width = scrolled + '%';
+                }, { passive: true });
+            }
+
+            // FIX: Form label focus states — rewritten to use CSS class toggling instead of
+            // direct inline style mutation. The original approach queried .technical-label inside
+            // parentElement but mobile labels use class="form-label" not "technical-label",
+            // so the querySelector silently failed and no label colour change occurred.
+            document.querySelectorAll('#contact-form-mobile input, #contact-form-mobile select, #contact-form-mobile textarea')
+                .forEach(input => {
+                    const label = input.closest('.flex.flex-col')?.querySelector('.form-label');
+                    if (!label) return;
+                    input.addEventListener('focus', () => label.classList.add('focused'));
+                    input.addEventListener('blur', () => label.classList.remove('focused'));
+                });
+
+            // FIX: Client-side form validation with accessible error feedback
+            // FIX: Renamed from `const form` to `const mobileForm` — both script blocks share the same
+            // global scope regardless of CSS display. `const form` was declared again in the desktop
+            // script (line ~777), causing a SyntaxError: Identifier 'form' has already been declared
+            // which crashed ALL JavaScript on the page.
+            const mobileForm = document.getElementById('contact-form-mobile');
+            if (mobileForm) {
+                mobileForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const requiredFields = mobileForm.querySelectorAll('[required]');
+                    let valid = true;
+                    requiredFields.forEach(field => {
+                        if (!field.value.trim()) {
+                            valid = false;
+                            field.style.borderBottomColor = '#ffb4ab';
+                        } else {
+                            field.style.borderBottomColor = '';
+                        }
+                    });
+                    if (valid) {
+                        const btn = mobileForm.querySelector('[type="submit"]');
+                        btn.textContent = 'TRANSMITTED ✓';
+                        btn.disabled = true;
+                    }
+                });
+            }
+        </script>
+
+    </div>
+
+    <!-- ================================================ -->
+    <!-- DESKTOP VERSION                                  -->
+    <!-- ================================================ -->
+    <div class="hidden md:flex flex-col min-h-screen">
+
+        <!-- Scroll Progress Playhead -->
+        <!-- FIX: Desktop playhead <div id="playhead"> had no CSS class applied — it relied on the
+             #playhead CSS ID selector. The desktop script also tried to set style.width on it.
+             Renamed to id="scroll-progress" to match all other pages and avoid collision with
+             mobile's #playhead. -->
+        <div id="scroll-progress" role="progressbar" aria-label="Page scroll progress" aria-valuemin="0"
+            aria-valuemax="100"></div>
+
+        <!-- TopNavBar -->
+        <!-- FIX: Brand <a href="#"> → <a href="/index.html"> (was linking to self)
+             FIX: All nav href="#" → real pages
+             FIX: aria-current="page" on CONTACT link
+             FIX: "GET IN TOUCH" non-functional <button> → <a href="/contact.html" aria-current="page">
+             FIX: scale-95 static class removed from all nav links
+             FIX: hover:text-inverse-primary → hover:text-primary (more readable; inverse-primary is a very dark magenta)
+             FIX: Theme toggle added (was absent)
+             FIX: Bogus "docked full-width" class strings removed -->
+        <header class="bg-background/95 backdrop-blur-sm w-full top-0 sticky border-b border-outline-variant z-50"
+            role="banner">
+            <nav class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-max-width mx-auto"
+                aria-label="Main navigation">
+                <a class="font-display-xl text-headline-lg font-black text-primary tracking-tighter hover:text-primary/80 transition-colors duration-300"
+                    href="/index.html">THE REEL</a>
+                <div class="hidden md:flex items-center gap-grid-gutter">
+                    <a class="font-meta-technical text-meta-technical uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300"
+                        href="/work.html">WORK</a>
+                    <a class="font-meta-technical text-meta-technical uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300"
+                        href="/editing_service.html">SERVICES</a>
+                    <a class="font-meta-technical text-meta-technical uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300"
+                        href="/about.html">ABOUT</a>
+                    <a class="font-meta-technical text-meta-technical uppercase tracking-widest text-primary font-bold border-b-2 border-primary pb-1"
+                        href="/contact.html" aria-current="page">CONTACT</a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button id="theme-toggle" aria-label="Toggle light/dark theme"
+                        class="text-on-surface-variant hover:text-primary transition-colors duration-300">
+                        <span class="material-symbols-outlined" id="theme-icon" aria-hidden="true">light_mode</span>
+                    </button>
+                    <!-- FIX: "GET IN TOUCH" on contact page scrolls to form instead of linking away -->
+                    <a class="font-meta-technical text-meta-technical uppercase tracking-widest bg-magenta text-obsidian px-4 py-2 hover:bg-primary transition-colors duration-300 hidden md:block"
+                        href="#contact-form">GET IN TOUCH</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-grow w-full px-margin-mobile md:px-margin-desktop py-section-gap max-w-max-width mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-grid-gutter">
+                <!-- Left: Form -->
+                <div class="md:col-span-7 lg:col-span-8 flex flex-col justify-start">
+                    <h1
+                        class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl text-primary mb-12 uppercase">
+                        LET'S MAKE SOMETHING
+                    </h1>
+                    <!-- FIX: Form has proper id, aria-labelledby, and all inputs have for/id pairs.
+                         FIX: type="submit" kept. novalidate added (using custom JS validation).
+                         FIX: autocomplete attributes added for better browser UX.
+                         FIX: required attributes added for accessibility. -->
+                    <form id="contact-form" class="space-y-8 max-w-2xl" novalidate
+                        aria-labelledby="contact-form-heading">
+                        <h2 id="contact-form-heading" class="sr-only">Send a project enquiry</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-grid-gutter">
+                            <div>
+                                <label class="form-label" for="name">NAME // ORG</label>
+                                <input class="form-input font-body-md text-body-md" id="name" name="name"
+                                    placeholder="Enter your name or company" type="text" autocomplete="name" required />
+                            </div>
+                            <div>
+                                <label class="form-label" for="email">EMAIL</label>
+                                <input class="form-input font-body-md text-body-md" id="email" name="email"
+                                    placeholder="hello@domain.com" type="email" autocomplete="email" required />
+                            </div>
+                        </div>
+                        <div>
+                            <label class="form-label" for="project_type">PROJECT SCOPE</label>
+                            <select
+                                class="form-input font-body-md text-body-md bg-surface-container-low appearance-none cursor-pointer"
+                                id="project_type" name="project_type" required>
+                                <option value="" disabled selected>SELECT TYPE</option>
+                                <option value="video">VIDEO EDITING</option>
+                                <option value="graphic">GRAPHIC DESIGN</option>
+                                <option value="motion">MOTION GRAPHICS</option>
+                                <option value="logo">LOGO DESIGN</option>
+                                <option value="branding">BRAND IDENTITY</option>
+                                <option value="other">OTHER</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="form-label" for="message">BRIEF // DETAILS</label>
+                            <textarea class="form-input font-body-md text-body-md resize-none" id="message"
+                                name="message" placeholder="Describe your project vision..." rows="4"
+                                required></textarea>
+                        </div>
+                        <div class="pt-4">
+                            <!-- FIX: Desktop submit button was bg-inverse-primary text-white — inconsistent with mobile
+                                 which correctly used bg-magenta text-obsidian. Normalised to magenta. -->
+                            <button
+                                class="bg-magenta text-obsidian font-headline-lg text-body-md uppercase px-8 py-3 hover:bg-primary transition-colors duration-300 w-full md:w-auto active:scale-95"
+                                type="submit">
+                                TRANSMIT
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Right: Contact Info -->
+                <!-- FIX: All href="#" → real URLs. External links have rel="noopener noreferrer".
+                     FIX: hover:text-inverse-primary → hover:text-magenta (matches mobile sidebar + spec) -->
+                <div
+                    class="md:col-span-5 lg:col-span-4 flex flex-col justify-start pt-12 md:pt-0 border-t md:border-t-0 md:border-l border-outline-variant md:pl-grid-gutter mt-12 md:mt-0">
+                    <div class="space-y-12">
+                        <div>
+                            <p class="font-meta-technical text-meta-technical text-on-surface-variant mb-2">DIRECT LINE
+                            </p>
+                            <a class="font-headline-lg text-headline-lg text-on-surface hover:text-magenta transition-colors block"
+                                href="mailto:hello@thereel.com">EMAIL</a>
+                        </div>
+                        <div>
+                            <p class="font-meta-technical text-meta-technical text-on-surface-variant mb-2">PORTFOLIO
+                            </p>
+                            <a class="font-headline-lg text-headline-lg text-on-surface hover:text-magenta transition-colors block"
+                                href="https://behance.net/" target="_blank" rel="noopener noreferrer">BEHANCE</a>
+                        </div>
+                        <div>
+                            <p class="font-meta-technical text-meta-technical text-on-surface-variant mb-2">SOCIAL</p>
+                            <a class="font-headline-lg text-headline-lg text-on-surface hover:text-magenta transition-colors block"
+                                href="https://instagram.com/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
+                        </div>
+                        <div class="pt-4">
+                            <p class="font-meta-technical text-meta-technical text-on-surface-variant mb-2">STATUS</p>
+                            <div class="inline-flex items-center gap-2 border border-outline-variant px-3 py-1"
+                                role="status">
+                                <span class="w-2 h-2 rounded-full bg-tertiary animate-pulse" aria-hidden="true"></span>
+                                <span class="font-meta-technical text-meta-technical text-tertiary">AVAILABLE FOR
+                                    COMMISSIONS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Desktop Footer -->
+        <!-- FIX: Brand <div> → <a href="/index.html"> (was non-interactive).
+             FIX: hover:text-tertiary (green) → hover:text-primary (magenta).
+             FIX: All href="#" → real URLs. External links have rel="noopener noreferrer".
+             FIX: Bogus "full-width bottom-0" class strings removed. -->
+        <footer class="border-t border-outline-variant bg-surface-container-lowest mt-auto" role="contentinfo">
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 gap-grid-gutter px-margin-mobile md:px-margin-desktop py-8 max-w-max-width mx-auto">
+                <div class="flex items-center">
+                    <a class="font-display-xl text-body-md font-bold text-on-surface uppercase" href="/index.html">
+                        ©2024 THE REEL // CINEMATIC PRECISION
+                    </a>
+                </div>
+                <nav class="flex flex-wrap gap-6 md:justify-end items-center" aria-label="Footer navigation">
+                    <a class="font-meta-technical text-meta-technical text-secondary hover:text-primary opacity-80 hover:opacity-100 transition-all uppercase"
+                        href="https://instagram.com/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
+                    <a class="font-meta-technical text-meta-technical text-secondary hover:text-primary opacity-80 hover:opacity-100 transition-all uppercase"
+                        href="https://vimeo.com/" target="_blank" rel="noopener noreferrer">VIMEO</a>
+                    <a class="font-meta-technical text-meta-technical text-secondary hover:text-primary opacity-80 hover:opacity-100 transition-all uppercase"
+                        href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
+                    <a class="font-meta-technical text-meta-technical text-secondary hover:text-primary opacity-80 hover:opacity-100 transition-all uppercase"
+                        href="/privacy.html">PRIVACY</a>
+                </nav>
+            </div>
+        </footer>
+
+        <script>
+            // Theme Toggle — with localStorage persistence
+            // FIX ERROR 2: Desktop script runs on ALL viewports (CSS display ≠ script execution).
+            // On mobile, #theme-toggle and #scroll-progress don't exist → getElementById returns null
+            // → addEventListener on null throws a TypeError that crashes the entire script block.
+            // Guard every element access with a null check.
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeIcon = document.getElementById('theme-icon');
+            const html = document.documentElement;
+
+            const savedThemeDesktop = localStorage.getItem('theme');
+            if (themeToggle && themeIcon) {
+                if (savedThemeDesktop === 'light') {
+                    html.classList.remove('dark');
+                    themeIcon.textContent = 'dark_mode';
+                }
+                themeToggle.addEventListener('click', () => {
+                    const isDark = html.classList.toggle('dark');
+                    themeIcon.textContent = isDark ? 'light_mode' : 'dark_mode';
+                    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                });
+            }
+
+            // FIX: Scroll progress — CSS-first, JS fallback. { passive: true }. Height guard.
+            // FIX: Targets #scroll-progress (was targeting desktop #playhead which had no CSS rule applied
+            //      — the desktop #playhead div had NO class/style at all, so width was silently set but invisible).
+            if (!CSS.supports('animation-timeline', 'scroll()')) {
+                window.addEventListener('scroll', () => {
+                    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                    if (height === 0) return;
+                    const scrolled = (winScroll / height) * 100;
+                    const el = document.getElementById('scroll-progress');
+                    if (el) el.style.width = scrolled + '%';
+                }, { passive: true });
+            }
+
+            // Form label focus states — class-based (more maintainable than inline style mutation)
+            // FIX: Desktop form labels DID have proper for/id pairs — focus handler is correct here.
+            document.querySelectorAll('#contact-form input, #contact-form select, #contact-form textarea')
+                .forEach(input => {
+                    const wrapper = input.closest('div');
+                    const label = wrapper?.querySelector('.form-label');
+                    if (!label) return;
+                    input.addEventListener('focus', () => label.classList.add('focused'));
+                    input.addEventListener('blur', () => label.classList.remove('focused'));
+                });
+
+            // Client-side form validation
+            // FIX: Renamed from `const form` to `const desktopForm` — eliminates the duplicate
+            // `const form` redeclaration that caused a SyntaxError crashing all JS on the page.
+            const desktopForm = document.getElementById('contact-form');
+            if (desktopForm) {
+                desktopForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const requiredFields = desktopForm.querySelectorAll('[required]');
+                    let valid = true;
+                    requiredFields.forEach(field => {
+                        if (!field.value.trim()) {
+                            valid = false;
+                            field.style.borderBottomColor = '#ffb4ab';
+                        } else {
+                            field.style.borderBottomColor = '';
+                        }
+                    });
+                    if (valid) {
+                        const btn = desktopForm.querySelector('[type="submit"]');
+                        btn.textContent = 'TRANSMITTED ✓';
+                        btn.disabled = true;
+                    }
+                });
+            }
+        </script>
+
+    </div>
+
+</body>
+
+</html>

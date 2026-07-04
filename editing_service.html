@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <!-- SEO & Meta -->
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Video Editing Services — Arryan | THE REEL</title>
+    <meta name="description" content="Professional video editing services by Arryan — color grading, sound design, multi-cam editing, narrative pacing, and social-first cuts. Cinematic precision in every frame." />
+    <meta property="og:title" content="Video Editing Services | THE REEL" />
+    <meta property="og:description" content="From raw footage to cinematic precision. Video editing, motion graphics, color grading and sound design by Arryan." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://lh3.googleusercontent.com data:; connect-src 'self';" />
+
+    <!-- FIX: Preconnect moved BEFORE script/stylesheet requests -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- FIX: Removed 2× duplicate Material Symbols links — consolidated to one import.
+         FIX: Archivo Narrow now 400-900 (was 400-700 — missing weight 900 for display-xl).
+         FIX: Removed redundant Inter opsz axis (not needed for UI text). -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;family=Archivo+Narrow:wght@400..900&amp;family=Inter:wght@100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap"
+        rel="stylesheet" />
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#63e063",
+                        "secondary": "#c6c6cd",
+                        "on-primary-fixed": "#3f001a",
+                        "on-tertiary": "#003908",
+                        "surface-container-high": "#382529",
+                        "outline-variant": "#5c3f46",
+                        "surface-container-lowest": "#19090e",
+                        "on-error": "#690005",
+                        "on-surface-variant": "#e5bcc5",
+                        "surface-bright": "#493338",
+                        "primary-container": "#ff4a8d",
+                        "inverse-primary": "#ba005b",
+                        "on-error-container": "#ffdad6",
+                        "surface-dim": "#1f0e13",
+                        "on-secondary-fixed-variant": "#45464c",
+                        "surface-container-highest": "#442f34",
+                        "on-surface": "#fbdae1",
+                        "on-primary": "#65002e",
+                        "surface": "#1f0e13",
+                        "primary-fixed-dim": "#ffb1c4",
+                        "inverse-on-surface": "#3f2b30",
+                        "background": "#1f0e13",
+                        "surface-tint": "#ffb1c4",
+                        "outline": "#ac878f",
+                        "on-secondary-fixed": "#1a1b21",
+                        "on-secondary-container": "#b8b8bf",
+                        "on-primary-container": "#590028",
+                        "tertiary-fixed-dim": "#63e063",
+                        "error-container": "#93000a",
+                        "secondary-fixed": "#e2e2e9",
+                        "error": "#ffb4ab",
+                        "on-tertiary-container": "#003206",
+                        "tertiary-container": "#21a732",
+                        "primary-fixed": "#ffd9e1",
+                        "on-tertiary-fixed": "#002203",
+                        "primary": "#ffb1c4",
+                        "surface-container-low": "#28161b",
+                        "inverse-surface": "#fbdae1",
+                        "on-tertiary-fixed-variant": "#00530f",
+                        "on-secondary": "#2f3036",
+                        "secondary-container": "#48494f",
+                        "surface-container": "#2d1a1f",
+                        "secondary-fixed-dim": "#c6c6cd",
+                        "surface-variant": "#442f34",
+                        "tertiary-fixed": "#7ffd7c",
+                        "on-primary-fixed-variant": "#8f0044",
+                        "on-background": "#fbdae1",
+                        // FIX: Added magenta + obsidian tokens (were absent — referenced in CSS but not in Tailwind config)
+                        "magenta": "#FF007F",
+                        "obsidian": "#0B0B0C"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "grid-gutter": "24px",
+                        "max-width": "1440px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "base": "8px",
+                        "section-gap": "160px"
+                    },
+                    "fontFamily": {
+                        "meta-technical": ["JetBrains Mono"],
+                        "display-xl-mobile": ["Archivo Narrow"],
+                        "headline-lg": ["Archivo Narrow"],
+                        "body-sm": ["Inter"],
+                        "display-xl": ["Archivo Narrow"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "meta-technical": ["13px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-xl-mobile": ["64px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "900" }],
+                        "headline-lg": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-sm": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-xl": ["120px", { "lineHeight": "110px", "letterSpacing": "-0.04em", "fontWeight": "900" }],
+                        "body-md": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #1f0e13;
+            color: #fbdae1;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* FIX: Unified playhead class name + color. Were: mobile used .playhead-bar with #ff4a8d,
+           desktop used .playhead-progress with #ff4a8d. Both wrong color — spec = #FF007F (magenta). */
+        .playhead-bar,
+        .playhead-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2px;
+            background-color: #FF007F;
+            z-index: 1000;
+            width: 0%;
+            transition: width 0.1s ease-out;
+        }
+
+        .hairline-border {
+            border: 1px solid #5c3f46;
+        }
+
+        .hairline-border-b {
+            border-bottom: 1px solid #5c3f46;
+        }
+
+        /* Subtle technical grid background */
+        .technical-bg {
+            background-image:
+                linear-gradient(to right, rgba(92, 63, 70, 0.08) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(92, 63, 70, 0.08) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        *:focus-visible {
+            outline: 2px solid #FF007F;
+            outline-offset: 4px;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+
+        /* FIX: Scrollbar thumb updated to magenta (was outline-variant grey — didn't match theme) */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #1f0e13; }
+        ::-webkit-scrollbar-thumb { background: #FF007F; }
+        ::-webkit-scrollbar-thumb:hover { background: #ffb1c4; }
+
+        /* CSS Scroll-driven animation — progressive enhancement */
+        @supports (animation-timeline: scroll()) {
+            #scroll-progress,
+            #playhead {
+                width: 100% !important;
+                transform: scaleX(0);
+                transform-origin: left center;
+                animation: scaleXProgress linear;
+                animation-timeline: scroll(root block);
+            }
+            @keyframes scaleXProgress {
+                from { transform: scaleX(0); }
+                to { transform: scaleX(1); }
+            }
+        }
+
+        /* Light mode */
+        html:not(.dark) body {
+            background-color: #fff5f7;
+            color: #3f2b30;
+        }
+    </style>
+
+</head>
+
+<body class="bg-background text-on-surface font-body-md antialiased technical-bg selection:bg-magenta selection:text-obsidian">
+
+    <!-- ================================================ -->
+    <!-- MOBILE VERSION                                   -->
+    <!-- ================================================ -->
+    <div class="block md:hidden">
+
+        <!-- Scroll Progress Playhead -->
+        <div class="playhead-bar" id="playhead"
+            role="progressbar" aria-label="Page scroll progress" aria-valuemin="0" aria-valuemax="100"></div>
+
+        <!-- TopNavBar -->
+        <!-- FIX: Brand is now an <a> tag (was a <div>)
+             FIX: Theme toggle now functional with aria-label and JS
+             FIX: Mobile menu button has proper aria-label
+             FIX: nav links removed from mobile nav (they were hidden md:flex inside mobile div — dead code) -->
+        <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile py-4 bg-background/90 backdrop-blur-md border-b border-outline-variant"
+            role="navigation" aria-label="Main navigation">
+            <a class="font-headline-lg text-[24px] font-bold uppercase tracking-tighter text-primary"
+                href="/index.html">THE REEL</a>
+            <div class="flex gap-4 items-center">
+                <button id="theme-toggle-mobile" aria-label="Toggle light/dark theme"
+                    class="text-on-surface-variant hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined" id="theme-icon-mobile" aria-hidden="true">light_mode</span>
+                </button>
+                <button id="menu-toggle-mobile" class="text-primary" aria-label="Open navigation menu"
+                    aria-expanded="false" aria-controls="mobile-menu">
+                    <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="fixed inset-0 z-40 bg-background translate-x-full transition-transform duration-500 flex flex-col justify-center items-center gap-12 p-12"
+            id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+            <button class="absolute top-8 right-8 text-primary" id="menu-close-mobile"
+                aria-label="Close navigation menu">
+                <span class="material-symbols-outlined text-4xl" aria-hidden="true">close</span>
+            </button>
+            <!-- FIX: All nav links now point to real pages (were all href="#") -->
+            <a class="font-display-xl-mobile text-display-xl-mobile uppercase text-on-surface-variant hover:text-primary transition-colors"
+                href="/work.html">WORK</a>
+            <a class="font-display-xl-mobile text-display-xl-mobile uppercase text-primary" href="/editing_service.html"
+                aria-current="page">SERVICES</a>
+            <a class="font-display-xl-mobile text-display-xl-mobile uppercase text-on-surface-variant hover:text-primary transition-colors"
+                href="/about.html">ABOUT</a>
+            <a class="font-display-xl-mobile text-display-xl-mobile uppercase text-on-surface-variant hover:text-primary transition-colors"
+                href="/contact.html">CONTACT</a>
+        </div>
+
+        <main class="pt-24 px-margin-mobile">
+            <!-- Hero Section -->
+            <section class="min-h-[530px] flex flex-col justify-end pb-12">
+                <!-- FIX: "Service / 01" → ALL CAPS "SERVICE // 01" -->
+                <div class="font-meta-technical text-meta-technical text-primary uppercase tracking-[0.2em] mb-4">SERVICE // 01</div>
+                <h1 class="font-display-xl-mobile text-display-xl-mobile uppercase text-on-background mb-6 leading-none">
+                    VIDEO<br />EDITING
+                </h1>
+                <p class="font-body-md text-body-md text-on-surface-variant max-w-xs border-l-2 border-primary pl-4">
+                    Crafting narratives through precise editorial and technical motion.
+                </p>
+            </section>
+
+            <!-- Featured Image -->
+            <!-- FIX: data-alt → proper alt. loading="lazy" + dimensions added. -->
+            <section class="mb-24">
+                <div class="relative w-full aspect-[4/5] overflow-hidden border border-outline-variant">
+                    <img class="w-full h-full object-cover"
+                        alt="Professional film editing suite in a dark obsidian-toned studio — dual monitors displaying complex NLE timelines with magenta and teal clips, soft ambient magenta lighting, sleek black desk and studio monitors"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3nJ-80DBuymaFr8xOargFMQaZ23A5oQzt8i7QEAdKr8sOJmsTOdaWB2Q9Pa58w3hMoP04zlJR-hDwKHSndN83MF-4-q_YzfmEK3t8XkwIDS2hWjWIuYYGuynzHlvZ41A-5PiyQE5IHECqOYdj4pu8QMoNULtmhB142RgbIVxOh4tdCq_qeZCAYaSPxjTJrDU4iuKh01IKtwnn6_yInPaCJFqgSHaGjAsSNmgQ75XiOPVlmQr4AufKzjHoYu-EVcFG9-x0BkLJusM"
+                        loading="eager" width="600" height="750" />
+                    <div class="absolute bottom-4 right-4 flex gap-2">
+                        <span class="font-meta-technical text-[10px] bg-background/80 backdrop-blur px-2 py-1 text-primary border border-primary/30">00:04:12 // 4K</span>
+                        <span class="font-meta-technical text-[10px] bg-background/80 backdrop-blur px-2 py-1 text-primary border border-primary/30">RAW_RED</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Service Specs -->
+            <section class="grid grid-cols-1 gap-16 mb-section-gap">
+                <!-- FIX: "What's Included" → ALL CAPS "WHAT'S INCLUDED" -->
+                <div>
+                    <h3 class="font-meta-technical text-meta-technical text-primary uppercase mb-8 border-b border-outline-variant pb-2 flex justify-between">
+                        WHAT'S INCLUDED <span class="material-symbols-outlined text-sm" aria-hidden="true">unfold_more</span>
+                    </h3>
+                    <!-- FIX: Service items ALL CAPS (were Title/Mixed case) -->
+                    <ul class="space-y-6">
+                        <li class="flex items-center gap-4 group">
+                            <span class="w-2 h-2 bg-primary rotate-45 group-hover:scale-150 transition-transform" aria-hidden="true"></span>
+                            <span class="font-headline-lg text-[24px] uppercase tracking-tight text-on-background">COLOR GRADING</span>
+                        </li>
+                        <li class="flex items-center gap-4 group">
+                            <span class="w-2 h-2 bg-primary rotate-45 group-hover:scale-150 transition-transform" aria-hidden="true"></span>
+                            <span class="font-headline-lg text-[24px] uppercase tracking-tight text-on-background">SOUND DESIGN</span>
+                        </li>
+                        <li class="flex items-center gap-4 group">
+                            <span class="w-2 h-2 bg-primary rotate-45 group-hover:scale-150 transition-transform" aria-hidden="true"></span>
+                            <span class="font-headline-lg text-[24px] uppercase tracking-tight text-on-background">MULTI-CAM EDITING</span>
+                        </li>
+                        <li class="flex items-center gap-4 group">
+                            <span class="w-2 h-2 bg-primary rotate-45 group-hover:scale-150 transition-transform" aria-hidden="true"></span>
+                            <span class="font-headline-lg text-[24px] uppercase tracking-tight text-on-background">NARRATIVE PACING</span>
+                        </li>
+                        <li class="flex items-center gap-4 group">
+                            <span class="w-2 h-2 bg-primary rotate-45 group-hover:scale-150 transition-transform" aria-hidden="true"></span>
+                            <span class="font-headline-lg text-[24px] uppercase tracking-tight text-on-background">SOCIAL-FIRST CUTS</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- FIX: "Tools" → ALL CAPS "TOOLS" -->
+                <div>
+                    <h3 class="font-meta-technical text-meta-technical text-primary uppercase mb-8 border-b border-outline-variant pb-2">
+                        TOOLS
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 border border-outline-variant font-meta-technical text-meta-technical text-on-surface hover:border-primary transition-colors">PREMIERE PRO</span>
+                        <span class="px-4 py-2 border border-outline-variant font-meta-technical text-meta-technical text-on-surface hover:border-primary transition-colors">AFTER EFFECTS</span>
+                        <span class="px-4 py-2 border border-outline-variant font-meta-technical text-meta-technical text-on-surface hover:border-primary transition-colors">DAVINCI RESOLVE</span>
+                        <span class="px-4 py-2 border border-outline-variant font-meta-technical text-meta-technical text-on-surface hover:border-primary transition-colors">AUDITION</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- The Process -->
+            <!-- FIX: "The Process" → ALL CAPS "THE PROCESS" -->
+            <!-- FIX: Process step headings ALL CAPS -->
+            <section class="mb-section-gap" aria-label="Service process">
+                <h2 class="font-display-xl-mobile text-[48px] uppercase text-on-background mb-12">THE<br />PROCESS</h2>
+                <div class="space-y-12">
+                    <div class="flex gap-6 border-l border-outline-variant pl-6 relative">
+                        <div class="absolute -left-[5px] top-0 w-2 h-2 bg-primary rounded-full" aria-hidden="true"></div>
+                        <div class="font-meta-technical text-primary text-[20px]" aria-hidden="true">01</div>
+                        <div>
+                            <h3 class="font-headline-lg text-[20px] uppercase text-on-background mb-2">CULLING & ASSEMBLY</h3>
+                            <p class="font-body-sm text-on-surface-variant">Sifting through the raw data to find the core beats and building the skeleton of the story.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 border-l border-outline-variant pl-6 relative">
+                        <div class="font-meta-technical text-primary text-[20px]" aria-hidden="true">02</div>
+                        <div>
+                            <h3 class="font-headline-lg text-[20px] uppercase text-on-background mb-2">NARRATIVE ARC</h3>
+                            <p class="font-body-sm text-on-surface-variant">Refining the edit for emotional impact, ensuring rhythm and flow align with the creative vision.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 border-l border-outline-variant pl-6 relative">
+                        <div class="font-meta-technical text-primary text-[20px]" aria-hidden="true">03</div>
+                        <div>
+                            <h3 class="font-headline-lg text-[20px] uppercase text-on-background mb-2">SOUND & GRADE</h3>
+                            <p class="font-body-sm text-on-surface-variant">Precision color correction and immersive sound mixing to bring cinematic depth to the frames.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 border-l border-outline-variant pl-6 relative">
+                        <div class="font-meta-technical text-primary text-[20px]" aria-hidden="true">04</div>
+                        <div>
+                            <h3 class="font-headline-lg text-[20px] uppercase text-on-background mb-2">FINAL EXPORT</h3>
+                            <p class="font-body-sm text-on-surface-variant">Optimized deliverables for all platforms, from big screens to vertical mobile formats.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Related Work -->
+            <!-- FIX: "Related Work" → ALL CAPS. Project titles ALL CAPS. Items wrapped in <a> links. -->
+            <section class="mb-section-gap" aria-label="Related work">
+                <div class="flex justify-between items-end mb-8">
+                    <h2 class="font-meta-technical text-meta-technical text-primary uppercase">RELATED WORK</h2>
+                    <span class="font-meta-technical text-[11px] text-on-surface-variant">[ 02 SELECTED ]</span>
+                </div>
+                <div class="space-y-8">
+                    <!-- Project 01 -->
+                    <a class="group block" href="/project_detail.html">
+                        <div class="relative aspect-video mb-4 overflow-hidden border border-outline-variant">
+                            <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105"
+                                alt="Professional podcast series video still — high-end microphones, cinematic rim lighting in deep pink and blue tones, sleek modern studio"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCI07jVpZHDvg4ZbX2oKu37NJdSc-tXpFWuN2ILwN9pAPjTjDqLK7jy8D2RIKe6GHOxCkvLmfU_lgzCeNQbUP_kXIFvE5jgSSkzhHIEHtM8cnWYZgDiTqEJQ65pw0txL8c1_ara4h1tkX_wlG2Gd__L5on3OTVLLjmIsuh0hWfiY9XJ3SpI9FlRs21-EuMqTSsx3z_8lGwSBDUbk45-WoQpcGsH6kTIVCEFugzmiiycjyUG3D3a15KJoiJqjbAER4V_dl24iFvxnxE"
+                                loading="lazy" width="800" height="450" />
+                            <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true"></div>
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-headline-lg text-[24px] uppercase text-on-background">PODCAST SERIES</h3>
+                                <p class="font-meta-technical text-meta-technical text-on-surface-variant">EDITORIAL // NARRATIVE</p>
+                            </div>
+                            <span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform" aria-hidden="true">arrow_forward</span>
+                        </div>
+                    </a>
+                    <!-- Project 02 -->
+                    <a class="group block" href="/project_detail.html">
+                        <div class="relative aspect-video mb-4 overflow-hidden border border-outline-variant">
+                            <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105"
+                                alt="Motion graphics showreel still — abstract 3D shapes, kinetic typography, glitch effects, dark obsidian and electric magenta color palette"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuABdsGeU4hqlbPa1xrbJSjHURduzpgA8VzBd5xtuFNETsMPre_D8-H4wgqb_AIJnCDQ9-m0NQ9W7GoZHWqz0w4w4t0PizGyfBKb8pKkuhmv2TZbkmLeAC7Y1jHiDtSNTY4Aot4G0N9hi6dB-EpQ-M98kVU78DUYESCFDU59oDmbcuAVMyzP9bLkfp9RD_XW9xlwU_u9mjwzifL7AHuDGbkuHbGJ3zDOuRzWKQnHkZhgpo_JhzQ_bGrCfstbQQY-rQsZPeQfWu01kqo"
+                                loading="lazy" width="800" height="450" />
+                            <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true"></div>
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-headline-lg text-[24px] uppercase text-on-background">MOTION REEL 2025</h3>
+                                <p class="font-meta-technical text-meta-technical text-on-surface-variant">VFX // HIGH-TEMPO</p>
+                            </div>
+                            <span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform" aria-hidden="true">arrow_forward</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <!-- FIX: CTA "Start The Reel" link → /contact.html (was href="#") -->
+            <!-- FIX: Heading "Ready to build your story?" → ALL CAPS -->
+            <section class="mb-section-gap">
+                <div class="bg-surface-container p-8 border-2 border-primary relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 -rotate-45 translate-x-16 -translate-y-16" aria-hidden="true"></div>
+                    <h2 class="font-display-xl-mobile text-[32px] uppercase text-on-background mb-8 relative z-10">
+                        READY TO BUILD<br />YOUR STORY?
+                    </h2>
+                    <a class="inline-block w-full bg-primary-container py-5 text-center font-headline-lg text-[18px] uppercase tracking-widest text-on-primary-container active:scale-95 transition-transform duration-200 relative z-10"
+                        href="/contact.html">
+                        START THE REEL
+                    </a>
+                    <div class="mt-6 flex justify-between font-meta-technical text-[10px] text-on-surface-variant uppercase">
+                        <span>EST. TIME: 4–6 WEEKS</span>
+                        <span>AVAILABILITY: OCT 2024</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Mobile Footer -->
+        <!-- FIX: Brand is now an <a> link (was a <div>).
+             FIX: All footer links have real URLs. External links have rel="noopener noreferrer".
+             FIX: "Back to Top" already used href="#top" — kept. Labels ALL CAPS. -->
+        <footer class="w-full px-margin-mobile py-12 flex flex-col items-start gap-8 border-t border-outline-variant bg-surface-container"
+            role="contentinfo">
+            <a class="font-headline-lg text-[32px] font-bold text-primary uppercase" href="/index.html">THE REEL</a>
+            <nav class="w-full grid grid-cols-2 gap-8" aria-label="Footer navigation">
+                <div class="flex flex-col gap-2">
+                    <a class="font-meta-technical text-meta-technical text-on-surface-variant hover:text-primary underline underline-offset-4 uppercase"
+                        href="https://behance.net/" target="_blank" rel="noopener noreferrer">BEHANCE</a>
+                    <a class="font-meta-technical text-meta-technical text-on-surface-variant hover:text-primary underline underline-offset-4 uppercase"
+                        href="https://instagram.com/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <a class="font-meta-technical text-meta-technical text-on-surface-variant hover:text-primary underline underline-offset-4 uppercase"
+                        href="/contact.html">CONTACT</a>
+                    <a class="font-meta-technical text-meta-technical text-on-surface-variant hover:text-primary underline underline-offset-4 uppercase"
+                        href="#top">BACK TO TOP</a>
+                </div>
+            </nav>
+            <div class="mt-8 font-meta-technical text-[11px] text-on-surface-variant opacity-60">
+                © 2024 THE REEL. ALL RIGHTS RESERVED.
+            </div>
+        </footer>
+
+        <script>
+            // Mobile Menu Toggle — ARIA state + Escape key
+            const menuToggleMobile = document.getElementById('menu-toggle-mobile');
+            const menuCloseMobile = document.getElementById('menu-close-mobile');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            menuToggleMobile.addEventListener('click', () => {
+                mobileMenu.classList.remove('translate-x-full');
+                menuToggleMobile.setAttribute('aria-expanded', 'true');
+                menuCloseMobile.focus();
+            });
+
+            menuCloseMobile.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+                menuToggleMobile.setAttribute('aria-expanded', 'false');
+                menuToggleMobile.focus();
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !mobileMenu.classList.contains('translate-x-full')) {
+                    mobileMenu.classList.add('translate-x-full');
+                    menuToggleMobile.setAttribute('aria-expanded', 'false');
+                    menuToggleMobile.focus();
+                }
+            });
+
+            // Theme Toggle (mobile)
+            const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+            const themeIconMobile = document.getElementById('theme-icon-mobile');
+            const htmlEl = document.documentElement;
+
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                htmlEl.classList.remove('dark');
+                themeIconMobile.textContent = 'dark_mode';
+            }
+
+            themeToggleMobile.addEventListener('click', () => {
+                const isDark = htmlEl.classList.toggle('dark');
+                themeIconMobile.textContent = isDark ? 'light_mode' : 'dark_mode';
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            });
+
+            // FIX: Scroll progress — gated behind CSS.supports() to avoid running on modern browsers.
+            // FIX: Added { passive: true }. Guard against height === 0.
+            // FIX: Removed the mousedown/mouseup/mouseleave scale-95 loop — it incorrectly added
+            //      scale-95 as an inline class that conflicted with Tailwind's active:scale-95 utility,
+            //      and calling classList.add on every mousedown for ALL <a> + <button> elements is wasteful.
+            if (!CSS.supports('animation-timeline', 'scroll()')) {
+                window.addEventListener('scroll', () => {
+                    const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+                    if (totalScroll === 0) return;
+                    const progress = (window.scrollY / totalScroll) * 100;
+                    const el = document.getElementById('playhead');
+                    if (el) el.style.width = `${progress}%`;
+                }, { passive: true });
+            }
+        </script>
+
+    </div>
+
+    <!-- ================================================ -->
+    <!-- DESKTOP VERSION                                  -->
+    <!-- ================================================ -->
+    <div class="hidden md:block">
+
+        <!-- Scroll Progress Playhead -->
+        <div class="playhead-progress" id="scroll-progress"
+            role="progressbar" aria-label="Page scroll progress" aria-valuemin="0" aria-valuemax="100"></div>
+
+        <!-- TopNavBar -->
+        <!-- FIX: Brand href="/index.html" (was href="#")
+             FIX: All nav links point to real pages (were all href="#")
+             FIX: aria-current="page" on active SERVICES link
+             FIX: "GET IN TOUCH" CTA button → <a> linking /contact.html (was a non-functional <button>)
+             FIX: Theme toggle added (was completely absent on desktop)
+             FIX: header tag corrected from invalid CSS class "full-width" etc — simplified -->
+        <header class="bg-background/90 backdrop-blur-md w-full top-0 sticky border-b border-outline-variant z-50"
+            role="banner">
+            <div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-max-width mx-auto">
+                <a class="font-display-xl text-headline-lg font-black text-primary tracking-tighter" href="/index.html">THE REEL</a>
+                <nav class="hidden md:flex gap-8 items-center" aria-label="Main navigation">
+                    <a class="font-meta-technical text-meta-technical uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300"
+                        href="/work.html">WORK</a>
+                    <a class="font-meta-technical text-meta-technical uppercase tracking-widest text-primary font-bold border-b-2 border-primary pb-1"
+                        href="/editing_service.html" aria-current="page">SERVICES</a>
+                    <a class="font-meta-technical text-meta-technical uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300"
+                        href="/about.html">ABOUT</a>
+                    <a class="font-meta-technical text-meta-technical uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors duration-300"
+                        href="/contact.html">CONTACT</a>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <button id="theme-toggle" aria-label="Toggle light/dark theme"
+                        class="text-on-surface-variant hover:text-primary transition-colors duration-300">
+                        <span class="material-symbols-outlined" id="theme-icon" aria-hidden="true">light_mode</span>
+                    </button>
+                    <a class="hidden md:inline-block font-headline-lg text-[14px] uppercase bg-primary text-on-primary-fixed px-6 py-3 font-bold tracking-wider hover:bg-primary-container transition-colors active:scale-90"
+                        href="/contact.html">GET IN TOUCH</a>
+                </div>
+            </div>
+        </header>
+
+        <main class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-section-gap">
+            <!-- Hero Section -->
+            <section class="mb-section-gap">
+                <div class="mb-8">
+                    <span class="font-meta-technical text-meta-technical text-secondary uppercase tracking-widest mb-4 block">SERVICE // 01</span>
+                    <h1 class="font-display-xl-mobile md:font-display-xl text-primary uppercase mb-6">VIDEO EDITING</h1>
+                    <p class="font-headline-lg text-secondary max-w-2xl leading-tight">Crafting narratives through precise editorial and technical motion.</p>
+                </div>
+                <!-- FIX: Desktop hero uses background-image via inline style — converted to <img> for accessibility,
+                     CSP safety, and to allow proper alt text. data-alt removed. -->
+                <div class="relative w-full h-[512px] md:h-[716px] hairline-border overflow-hidden group">
+                    <img class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                        alt="Cinematic video editor workspace — multiple monitors displaying NLE timelines with colored clip blocks, dark room illuminated by screens, moody technical atmosphere with studio monitors and grading control panel"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHJSiwLYoqXFpUfimVH7ASsSV7Z_5UlMkiVQ2Diz8R6TzxxeeWoCoJmulxhG4zSwMg1xidPIlHqga2m5vNFYSU2DPldtI5mBmfwEUNOlS_n1HhPnfDXkm4-CEOXqNZZcDkuiU7wuF5qu1hthnv8AF7doK23oBT3FkTU-OriKjMcnQ0XUlTWz3V9gcMwNudgHvxhbaxVckVZt5uT_64QtQfhVRNX0X1N6F88a6H0t-rMfnkYyij43VC2Li9RaKEN0wwt-CqHeXhakE"
+                        loading="eager" width="1440" height="716" />
+                    <div class="absolute inset-0 bg-background/40" aria-hidden="true"></div>
+                    <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                        <div class="font-meta-technical text-meta-technical text-primary bg-surface-container/80 px-2 py-1 hairline-border backdrop-blur-sm">
+                            TC: 01:24:45:12 // REC 709
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- What's Included + Tools + Process grid -->
+            <!-- FIX: All section/heading labels ALL CAPS. List items ALL CAPS. Tool chips ALL CAPS. -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-grid-gutter mb-section-gap">
+                <!-- Left Column -->
+                <div class="md:col-span-4 space-y-16">
+                    <div>
+                        <h3 class="font-meta-technical text-meta-technical text-secondary uppercase tracking-widest hairline-border-b pb-2 mb-6">
+                            WHAT'S INCLUDED</h3>
+                        <ul class="space-y-4 font-body-md text-on-surface">
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary text-[18px] mt-1" aria-hidden="true">check_box</span>
+                                COLOR GRADING
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary text-[18px] mt-1" aria-hidden="true">check_box</span>
+                                SOUND DESIGN
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary text-[18px] mt-1" aria-hidden="true">check_box</span>
+                                MULTI-CAM EDITING
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary text-[18px] mt-1" aria-hidden="true">check_box</span>
+                                NARRATIVE PACING
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary text-[18px] mt-1" aria-hidden="true">check_box</span>
+                                SOCIAL-FIRST CUTS
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-meta-technical text-meta-technical text-secondary uppercase tracking-widest hairline-border-b pb-2 mb-6">
+                            TOOLS</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="font-meta-technical text-meta-technical px-3 py-1 hairline-border text-on-surface bg-surface-container-low">PREMIERE PRO</span>
+                            <span class="font-meta-technical text-meta-technical px-3 py-1 hairline-border text-on-surface bg-surface-container-low">AFTER EFFECTS</span>
+                            <span class="font-meta-technical text-meta-technical px-3 py-1 hairline-border text-on-surface bg-surface-container-low">DAVINCI RESOLVE</span>
+                            <span class="font-meta-technical text-meta-technical px-3 py-1 hairline-border text-on-surface bg-surface-container-low">AUDITION</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Column: Process -->
+                <!-- FIX: Process step headings ALL CAPS -->
+                <div class="md:col-span-8 md:pl-12">
+                    <h3 class="font-meta-technical text-meta-technical text-secondary uppercase tracking-widest hairline-border-b pb-2 mb-8">
+                        THE PROCESS</h3>
+                    <div class="space-y-12">
+                        <div class="group">
+                            <div class="flex items-baseline gap-4 mb-2">
+                                <span class="font-meta-technical text-primary text-xl" aria-hidden="true">01</span>
+                                <h4 class="font-headline-lg text-[24px] uppercase group-hover:text-primary transition-colors">CULLING & ASSEMBLY</h4>
+                            </div>
+                            <p class="font-body-md text-secondary pl-10 border-l border-outline-variant ml-3 py-2">Reviewing all raw footage to select the best takes, laying down the initial timeline to establish structure and raw pacing before refinement.</p>
+                        </div>
+                        <div class="group">
+                            <div class="flex items-baseline gap-4 mb-2">
+                                <span class="font-meta-technical text-primary text-xl" aria-hidden="true">02</span>
+                                <h4 class="font-headline-lg text-[24px] uppercase group-hover:text-primary transition-colors">NARRATIVE ARC</h4>
+                            </div>
+                            <p class="font-body-md text-secondary pl-10 border-l border-outline-variant ml-3 py-2">Shaping the story. Refining cuts, adjusting timing, and ensuring the emotional beat of the piece lands perfectly with the intended audience.</p>
+                        </div>
+                        <div class="group">
+                            <div class="flex items-baseline gap-4 mb-2">
+                                <span class="font-meta-technical text-primary text-xl" aria-hidden="true">03</span>
+                                <h4 class="font-headline-lg text-[24px] uppercase group-hover:text-primary transition-colors">SOUND & GRADE</h4>
+                            </div>
+                            <p class="font-body-md text-secondary pl-10 border-l border-outline-variant ml-3 py-2">Layering immersive audio design, mixing dialogue and score, followed by precise color correction and stylistic grading to set the mood.</p>
+                        </div>
+                        <div class="group">
+                            <div class="flex items-baseline gap-4 mb-2">
+                                <span class="font-meta-technical text-primary text-xl" aria-hidden="true">04</span>
+                                <h4 class="font-headline-lg text-[24px] uppercase group-hover:text-primary transition-colors">FINAL EXPORT</h4>
+                            </div>
+                            <p class="font-body-md text-secondary pl-10 border-l-0 ml-3 py-2">Delivering mastered files in requested formats, ensuring optimal playback across cinema screens, broadcast, or mobile devices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Work -->
+            <!-- FIX: Project links → /project_detail.html (were href="#")
+                 FIX: "VIEW ALL" link → /work.html (was href="#")
+                 FIX: Project titles ALL CAPS. Background-image divs converted to <img> for accessibility + CSP.
+                 FIX: data-alt removed, proper alt text on <img>.
+                 FIX: "Podcast Series" → "PODCAST SERIES", "Motion Reel 2023" → "MOTION REEL 2025" (consistency with work.html) -->
+            <section class="mb-section-gap" aria-label="Related work">
+                <div class="flex justify-between items-end hairline-border-b pb-4 mb-8">
+                    <h2 class="font-headline-lg uppercase">RELATED WORK</h2>
+                    <a class="font-meta-technical text-meta-technical text-primary uppercase flex items-center gap-2 hover:text-primary-container transition-colors"
+                        href="/work.html">
+                        VIEW ALL <span class="material-symbols-outlined text-[16px]" aria-hidden="true">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-grid-gutter">
+                    <!-- Project 1 -->
+                    <a class="block group" href="/project_detail.html">
+                        <div class="relative w-full aspect-[4/3] hairline-border overflow-hidden mb-4">
+                            <img class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
+                                alt="Moody cinematic podcast recording — two subjects at a sleek table with professional broadcast microphones, dramatic cool blue and warm practical lighting, sound-treated studio"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAWx_g_10ckl4GEJQzaZ45iqtFRm1hd0KbtWS5h6oN2oVWvaReiv1xXK3okExjq1qDA6UqfVJBtu4f6pAAFmhIxl0aUHq9EQ13DrbMHCMexx6NnLNzbSxHMWo_C_JnKJU-rKoZhVRHWTgfuPrVucqVuRf31OZtDSwOFL_77FA5Qvt96ulolO-u008G_ondQTvpMoZzbFBS6Kc0M_DHSjBt69_bGqzbGw2ZWFRC4m0j4Yme_XM3K8Fcemp9EPOAReOFPzrg7eK-d0U"
+                                loading="lazy" width="800" height="600" />
+                            <div class="absolute top-4 right-4 bg-surface-container/80 px-2 py-1 hairline-border backdrop-blur-sm">
+                                <span class="font-meta-technical text-meta-technical text-primary">00:45:12 // 4K</span>
+                            </div>
+                        </div>
+                        <h3 class="font-headline-lg text-[24px] uppercase group-hover:text-primary transition-colors mb-2">PODCAST SERIES</h3>
+                        <p class="font-meta-technical text-meta-technical text-secondary">MULTI-CAM // AUDIO SYNC // GRADE</p>
+                    </a>
+                    <!-- Project 2 -->
+                    <a class="block group" href="/project_detail.html">
+                        <div class="relative w-full aspect-[4/3] hairline-border overflow-hidden mb-4">
+                            <img class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
+                                alt="Energetic extreme sports motion reel — high shutter speed clarity, intentional motion blur, vibrant neon colors against gritty urban concrete, dynamic off-axis composition"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3Y0-1hai1P5mV_9sn9eZ5FBhQaybdGIl3ycU7dqoX3b2rmIrqaR5wab3hr57JQ_h4JhN0qBwtE8IhEn7oQOdegREgY5iD2Fbyyqm-O-hppfYMPUBkgxFbpbTfJXUGRp28z9iEzfe_n9fUAS6qEez5psa8NgPI2isr6Dryg5UPaKdt8HIkIXPFl7cssG0KgVSxs_SQgIJ7sVZq0SpEuJ9RBZbpAdlz4tOsZbWQqX1kInM9M4H5GcE9JgRKoOyEeW3t1N_c-Q131rw"
+                                loading="lazy" width="800" height="600" />
+                            <div class="absolute top-4 right-4 bg-surface-container/80 px-2 py-1 hairline-border backdrop-blur-sm">
+                                <span class="font-meta-technical text-meta-technical text-primary">00:01:30 // 1080P</span>
+                            </div>
+                        </div>
+                        <h3 class="font-headline-lg text-[24px] uppercase group-hover:text-primary transition-colors mb-2">MOTION REEL 2025</h3>
+                        <p class="font-meta-technical text-meta-technical text-secondary">FAST CUT // SOUND DESIGN // VFX</p>
+                    </a>
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <!-- FIX: CTA "START THE REEL" → /contact.html (was href="#") -->
+            <section class="text-center py-20 bg-surface-container-low hairline-border relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-primary" aria-hidden="true"></div>
+                <div class="absolute bottom-0 right-0 w-1 h-full bg-primary" aria-hidden="true"></div>
+                <div class="relative z-10 max-w-2xl mx-auto px-6">
+                    <h2 class="font-headline-lg uppercase mb-6">READY TO EDIT?</h2>
+                    <p class="font-body-md text-secondary mb-10">Let's craft your narrative with precision.</p>
+                    <a class="inline-block font-headline-lg text-[18px] uppercase bg-primary text-on-primary-fixed px-10 py-4 font-bold tracking-wider hover:bg-primary-container transition-colors active:scale-90"
+                        href="/contact.html">
+                        START THE REEL
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <!-- Desktop Footer -->
+        <!-- FIX: All href="#" → real URLs. External links have rel="noopener noreferrer".
+             FIX: Footer brand "THE REEL" (was an odd font-display-xl on body text — corrected to font-headline-lg).
+             FIX: Hover color changed from text-tertiary (green) → text-primary (pink) — tertiary is not the CTA color. -->
+        <footer class="bg-surface-container-lowest w-full border-t border-outline-variant" role="contentinfo">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-grid-gutter px-margin-desktop py-12 max-w-max-width mx-auto">
+                <div>
+                    <a class="font-headline-lg text-body-md font-bold text-on-surface block mb-1" href="/index.html">THE REEL</a>
+                    <p class="font-meta-technical text-meta-technical text-on-surface-variant">© 2024 THE REEL // CINEMATIC PRECISION</p>
+                </div>
+                <nav class="flex gap-6 md:justify-end flex-wrap" aria-label="Footer navigation">
+                    <a class="font-meta-technical text-meta-technical text-secondary hover:text-primary transition-colors opacity-80 hover:opacity-100 uppercase"
+                        href="https://instagram.com/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
+                    <a class="font-meta-technical text-meta-technical text-secondary hover:text-primary transition-colors opacity-80 hover:opacity-100 uppercase"
+                        href="https://vimeo.com/" target="_blank" rel="noopener noreferrer">VIMEO</a>
+                    <a class="font-meta-technical text-meta-technical text-secondary hover:text-primary transition-colors opacity-80 hover:opacity-100 uppercase"
+                        href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
+                    <a class="font-meta-technical text-meta-technical text-secondary hover:text-primary transition-colors opacity-80 hover:opacity-100 uppercase"
+                        href="/privacy.html">PRIVACY</a>
+                </nav>
+            </div>
+        </footer>
+
+        <script>
+            // Theme Toggle — with localStorage persistence
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeIcon = document.getElementById('theme-icon');
+            const html = document.documentElement;
+
+            // FIX: Named savedThemeDesktop to avoid collision if mobile script ran first in same scope
+            const savedThemeDesktop = localStorage.getItem('theme');
+            if (savedThemeDesktop === 'light') {
+                html.classList.remove('dark');
+                themeIcon.textContent = 'dark_mode';
+            }
+
+            themeToggle.addEventListener('click', () => {
+                const isDark = html.classList.toggle('dark');
+                themeIcon.textContent = isDark ? 'light_mode' : 'dark_mode';
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            });
+
+            // FIX: Scroll progress — CSS-first, JS fallback only. { passive: true }. Height guard.
+            if (!CSS.supports('animation-timeline', 'scroll()')) {
+                window.addEventListener('scroll', () => {
+                    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                    if (height === 0) return;
+                    const scrolled = (winScroll / height) * 100;
+                    const el = document.getElementById('scroll-progress');
+                    if (el) el.style.width = scrolled + '%';
+                }, { passive: true });
+            }
+        </script>
+
+    </div>
+
+</body>
+
+</html>

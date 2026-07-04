@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+
+    <!-- SEO & Meta -->
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Arryan — The Reel | Video Editing & Motion Design</title>
+    <meta name="description"
+        content="Arryan — Cinematic video editing, motion graphics, graphic design, and logo design. Precision is the only metric." />
+    <meta property="og:title" content="Arryan — The Reel" />
+    <meta property="og:description" content="Video Editing · Motion Graphics · Graphic Design · Cinematic Precision." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Content Security Policy — restricts script/style/font/image sources -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://lh3.googleusercontent.com data:; connect-src 'self';" />
+
+    <!-- Font preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- FIX: Removed duplicate Material Symbols link. Single consolidated font import. -->
+    <!-- FIX: Archivo Narrow loaded with full 400–900 weight range to support display-xl (was: Archivo 900 loaded separately) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;family=Archivo+Narrow:wght@400..900&amp;family=Inter:wght@400..700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#003908",
+                        "surface-tint": "#ffb1c4",
+                        "secondary-fixed-dim": "#c6c6cd",
+                        "surface-dim": "#1f0e13",
+                        "tertiary-container": "#21a732",
+                        "error-container": "#93000a",
+                        "on-background": "#fbdae1",
+                        "surface-container-lowest": "#19090e",
+                        "on-tertiary-container": "#003206",
+                        "on-tertiary-fixed-variant": "#00530f",
+                        "surface-container": "#2d1a1f",
+                        "inverse-primary": "#ba005b",
+                        "surface-container-high": "#382529",
+                        "surface-container-highest": "#442f34",
+                        "secondary-container": "#48494f",
+                        "on-surface": "#fbdae1",
+                        "surface": "#1f0e13",
+                        "surface-bright": "#493338",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#45464c",
+                        "primary-fixed": "#ffd9e1",
+                        "background": "#1f0e13",
+                        "tertiary-fixed": "#7ffd7c",
+                        "error": "#ffb4ab",
+                        "on-surface-variant": "#e5bcc5",
+                        "on-tertiary-fixed": "#002203",
+                        "tertiary": "#63e063",
+                        "on-primary-container": "#590028",
+                        "outline-variant": "#5c3f46",
+                        "outline": "#ac878f",
+                        "on-primary": "#65002e",
+                        "tertiary-fixed-dim": "#63e063",
+                        "on-error": "#690005",
+                        "inverse-on-surface": "#3f2b30",
+                        "surface-container-low": "#28161b",
+                        "primary-fixed-dim": "#ffb1c4",
+                        "on-secondary-fixed": "#1a1b21",
+                        "primary-container": "#ff4a8d",
+                        "on-primary-fixed": "#3f001a",
+                        "secondary-fixed": "#e2e2e9",
+                        "surface-variant": "#442f34",
+                        "secondary": "#c6c6cd",
+                        "on-secondary-container": "#b8b8bf",
+                        "on-secondary": "#2f3036",
+                        "on-primary-fixed-variant": "#8f0044",
+                        "primary": "#ffb1c4",
+                        "inverse-surface": "#fbdae1",
+                        "magenta": "#FF007F",
+                        "obsidian": "#0B0B0C"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "grid-gutter": "24px",
+                        "base": "8px",
+                        "margin-desktop": "64px",
+                        "max-width": "1440px",
+                        "section-gap": "160px"
+                    },
+                    "fontFamily": {
+                        "meta-technical": ["JetBrains Mono"],
+                        "display-xl-mobile": ["Archivo Narrow"],
+                        "headline-lg": ["Archivo Narrow"],
+                        // FIX: was "Archivo" (non-Narrow) — Stitch spec mandates "Archivo Narrow" for display-xl
+                        "display-xl": ["Archivo Narrow"],
+                        "body-sm": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "meta-technical": ["13px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-xl-mobile": ["64px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "900" }],
+                        "headline-lg": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-xl": ["120px", { "lineHeight": "110px", "letterSpacing": "-0.04em", "fontWeight": "900" }],
+                        "body-sm": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-md": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        /* FIX: Removed conflicting duplicate body rule (was: #0B0B0C override then #1f0e13).
+           Single rule matching Stitch spec background color. */
+        body {
+            background-color: #1f0e13;
+            color: #fbdae1;
+            overflow-x: hidden;
+        }
+
+        .playhead-animation {
+            width: 0;
+            animation: playheadFill 2s cubic-bezier(0.87, 0, 0.13, 1) forwards;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes playheadFill {
+            to {
+                width: 100%;
+            }
+        }
+
+        .filmstrip-pan {
+            animation: panLeft 60s linear infinite;
+        }
+
+        @keyframes panLeft {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .hover-video-preview:hover img {
+            opacity: 0.3;
+        }
+
+        .hover-video-preview:hover .video-overlay {
+            opacity: 1;
+        }
+
+        *:focus-visible {
+            outline: 2px solid #FF007F !important;
+            outline-offset: 4px;
+        }
+
+        /* Desktop scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0B0B0C;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #FF007F;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .playhead-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2px;
+            background-color: #FF007F;
+            z-index: 100;
+            transition: width 0.1s ease-out;
+        }
+
+        .text-outline {
+            -webkit-text-stroke: 1px #ffb1c4;
+            color: transparent;
+        }
+
+        /* Mobile scroll reveal */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .video-overlay {
+            background: linear-gradient(180deg, rgba(31, 14, 19, 0.4) 0%, rgba(31, 14, 19, 1) 90%);
+        }
+
+        /* FIX: CSS Scroll-driven animation for scroll progress bars.
+           Progressive enhancement — replaces the JS scroll listener on modern browsers.
+           JS fallback is gated by CSS.supports() check in the script block. */
+        @supports (animation-timeline: scroll()) {
+            #scroll-progress {
+                width: 100% !important;
+                transform: scaleX(0);
+                transform-origin: left center;
+                animation: scaleXProgress linear;
+                animation-timeline: scroll(root block);
+            }
+
+            #playhead {
+                width: 100% !important;
+                transform: scaleX(0);
+                transform-origin: left center;
+                animation: scaleXProgress linear;
+                animation-timeline: scroll(root block);
+            }
+
+            @keyframes scaleXProgress {
+                from {
+                    transform: scaleX(0);
+                }
+
+                to {
+                    transform: scaleX(1);
+                }
+            }
+        }
+
+        /* Light mode support (activated by theme toggle) */
+        html:not(.dark) body {
+            background-color: #fff5f7;
+            color: #3f2b30;
+        }
+
+        html:not(.dark) .bg-obsidian\/90 {
+            background-color: rgba(255, 245, 247, 0.9) !important;
+        }
+    </style>
+
+</head>
+
+<body class="antialiased selection:bg-magenta selection:text-obsidian">
+
+    <!-- ================================================ -->
+    <!-- MOBILE VERSION (hidden on md+ screens)           -->
+    <!-- ================================================ -->
+    <div class="block md:hidden">
+
+        <div class="playhead-bar" id="playhead" role="progressbar" aria-label="Page scroll progress" aria-valuemin="0"
+            aria-valuemax="100"></div>
+
+        <!-- TopNavBar -->
+        <header class="top-0 sticky z-50 bg-background border-b border-primary/20">
+            <nav class="flex justify-between items-center w-full px-margin-mobile py-4 max-w-max-width mx-auto"
+                role="navigation" aria-label="Main navigation">
+                <a class="font-display-xl text-headline-lg font-black text-primary tracking-tighter" href="/index.html"
+                    aria-current="page">
+                    THE REEL
+                </a>
+                <button class="text-primary p-2" id="menu-toggle" aria-label="Open navigation menu"
+                    aria-expanded="false" aria-controls="mobile-menu">
+                    <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+                </button>
+            </nav>
+        </header>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="fixed inset-0 z-40 bg-background translate-x-full transition-transform duration-500 flex flex-col justify-center items-center gap-12 p-12"
+            id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+            <button class="absolute top-8 right-8 text-primary" id="menu-close" aria-label="Close navigation menu">
+                <span class="material-symbols-outlined text-4xl" aria-hidden="true">close</span>
+            </button>
+            <!-- FIX: All nav links now point to real pages (were all href="#") -->
+            <a class="font-display-xl-mobile text-display-xl-mobile uppercase text-primary" href="/work.html">WORK</a>
+            <a class="font-display-xl-mobile text-display-xl-mobile uppercase" href="/editing_service.html">SERVICES</a>
+            <a class="font-display-xl-mobile text-display-xl-mobile uppercase" href="/about.html">ABOUT</a>
+            <a class="font-display-xl-mobile text-display-xl-mobile uppercase" href="/contact.html">CONTACT</a>
+        </div>
+
+        <main>
+            <!-- Hero Section -->
+            <section class="relative h-[795px] flex flex-col justify-end px-margin-mobile pb-24 overflow-hidden">
+                <div class="absolute inset-0 z-0">
+                    <div class="w-full h-full bg-cover bg-center opacity-40"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDQf961ongv_YccR9KiC2hYL4GvBWZuXooz2otfTWSjicAEkujlNCXSASwirOjO7Nc0bwrsxWVRs0NMDboQW5ex6vufvnzV0wP1EK3il35ikP5JfQE-AV0LUPs1eIwC7lRUUpuk8JubiLzMVLAYQvW8HmQw5kC4ilZqM4nsrwFKqyCFtnRX6Db4xyFw2T265KpO374EL0qUyvQliaHKhtTedBxNOnW2ENdx7WQFXlCvmsN2SxY6HBDCXi7RwcmRwXo_sgF4esPbXU4')"
+                        role="img"
+                        aria-label="Portrait-oriented filmstrip of cinematic Tokyo night scenes in neon pink and obsidian tones">
+                    </div>
+                    <div class="absolute inset-0 video-overlay"></div>
+                </div>
+                <div class="relative z-10">
+                    <p class="font-meta-technical text-meta-technical text-primary uppercase tracking-[0.3em] mb-4">
+                        ESTABLISHED 2024</p>
+                    <h1
+                        class="font-display-xl-mobile text-display-xl-mobile uppercase leading-[0.85] tracking-tighter mb-2">
+                        <span class="block">ARRYAN</span>
+                        <span class="block text-outline">EDITS</span>
+                    </h1>
+                    <div class="w-12 h-1 bg-primary mb-8"></div>
+                </div>
+            </section>
+
+            <!-- Intro Section -->
+            <section class="px-margin-mobile py-24 border-b border-outline-variant scroll-reveal">
+                <div class="max-w-md">
+                    <h2 class="font-meta-technical text-meta-technical text-primary uppercase mb-6 tracking-widest">//
+                        MISSION STATEMENT</h2>
+                    <p class="font-display-xl-mobile text-[32px] leading-tight font-bold text-on-surface mb-8">
+                        WE CUT STORIES THAT RESONATE AND CRAFT IDENTITIES THAT ENDURE. PRECISION IS OUR ONLY METRIC.
+                    </p>
+                    <p class="font-body-md text-on-surface-variant">
+                        Merging the rhythmic soul of cinema with the rigid structure of technical design. We operate at
+                        the intersection of moving image and graphic systems.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Selected Work -->
+            <section class="py-24">
+                <div class="px-margin-mobile mb-12 flex justify-between items-end">
+                    <div>
+                        <h2 class="font-meta-technical text-meta-technical text-primary uppercase tracking-widest mb-2">
+                            // SELECTED REELS</h2>
+                        <p class="font-headline-lg text-2xl uppercase font-black">LATEST WORK</p>
+                    </div>
+                    <div class="font-meta-technical text-meta-technical text-on-surface-variant">01 / 08</div>
+                </div>
+                <div class="flex flex-col gap-12 px-margin-mobile">
+
+                    <!-- FIX: Project tiles are now <a> tags (were <article> with non-interactive <button>)
+                         so keyboard users can tab and activate them. Images have proper alt text (were data-alt). -->
+
+                    <!-- Project 1 -->
+                    <article class="group scroll-reveal">
+                        <a href="/project_detail.html" class="block">
+                            <div class="relative aspect-[3/4] overflow-hidden mb-4 border border-outline-variant">
+                                <!-- FIX: alt text added (was data-alt — zero accessibility) -->
+                                <!-- FIX: loading="lazy" added for below-fold images. width/height prevent CLS. -->
+                                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    alt="Cinematic movie poster for NEON VOID — silhouette against magenta and obsidian urban landscape"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoHfRlJl3qyGN1oO1TQAHa8wOPl16cegZiA-5ZmOk-bSnJXeAz4j3Kcbhf_x-pxm4hGgYPSExbTA7MPfZSMQAPZ94MghZT-hs_XA-vAteiwk_LnbciEgZltKNce5-dSIggui1O7v4SMMtEl_sY6EnWl7Dh5-8sBte6zdcikNyFXRV4NQpLbguLza6hPRqCioZjdraw1Jvu6W4TOiw014LShjQQHd1f3sCyxeX1bKS_RN2Y0wjqzPwJUsrQvpOs_z5tzQ3HIDXDG2w"
+                                    loading="lazy" width="600" height="800" />
+                                <div
+                                    class="absolute top-4 right-4 bg-background/80 backdrop-blur-md px-3 py-1 font-meta-technical text-meta-technical border border-primary/20">
+                                    00:02:45 // 4K
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="font-headline-lg text-2xl uppercase font-bold text-primary mb-1">NEON
+                                        VOID</h3>
+                                    <p
+                                        class="font-meta-technical text-meta-technical text-on-surface-variant uppercase tracking-widest">
+                                        NARRATIVE EDITING · 2024</p>
+                                </div>
+                                <span class="text-primary material-symbols-outlined"
+                                    aria-hidden="true">arrow_outward</span>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="group scroll-reveal">
+                        <a href="/project_detail.html" class="block">
+                            <div class="relative aspect-[3/4] overflow-hidden mb-4 border border-outline-variant">
+                                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    alt="Bold typography-based logo KINETIC on dark paper background — magenta and obsidian palette, brutal graphic design"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbKn0G1UPjcDkKSBxy6QXPWvb3nQmRBzcIS8tXTblXL8G4LqTgPixnn2fsixMhavlGTEJ4RLUYjbi74fdPUgyXDAU_kJPwRgCTdsyTGh5zt6PzQ54MNrjtQV5ygD3tjblOUBDHe2i7hWazFzkjUTuhuhG59suMRLUDEeuyZrGTN5aKSatlH_J5ujsA7od1JGppjlfnCldikX9GXEfuVdX3CLe38ZTCaU_JzvvlV61KPa-29FJvfty6cKrqR33TM6rPe6LJTAZI3yY"
+                                    loading="lazy" width="600" height="800" />
+                                <div
+                                    class="absolute top-4 right-4 bg-background/80 backdrop-blur-md px-3 py-1 font-meta-technical text-meta-technical border border-primary/20">
+                                    POST-PROD
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="font-headline-lg text-2xl uppercase font-bold text-primary mb-1">KINETIC
+                                        IDENTITY</h3>
+                                    <p
+                                        class="font-meta-technical text-meta-technical text-on-surface-variant uppercase tracking-widest">
+                                        BRANDING · 2024</p>
+                                </div>
+                                <span class="text-primary material-symbols-outlined"
+                                    aria-hidden="true">arrow_outward</span>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="group scroll-reveal">
+                        <a href="/project_detail.html" class="block">
+                            <div class="relative aspect-[3/4] overflow-hidden mb-4 border border-outline-variant">
+                                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    alt="Motion graphics sequence — abstract obsidian shards floating in a magenta nebula with technical metadata overlay"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9tP8nx-Vz_prUAeeVSqNs3neP5xJN1G6F0gdT4qfqmhSaLRKIhKCHdOR3m71yAO3VMWTX-2-nKkiCfRdws8OHGCBajk7qHcuxYKSX8H8cllVLQnRhZ1URzBlvGnqL6Wa79F2pYQ5fP2W07ZFzizMzRz5HeenyIDaDiEHpql7qoAW3p1rTNQUT7wr7weyQWhy1z0_nwjnpkxQibNlacg9gi_nGRBqjfmQdaBbz_LgKDizOdjSTVBKd4E_UDCJkndCufOxWQvwnKzc"
+                                    loading="lazy" width="600" height="800" />
+                                <div
+                                    class="absolute top-4 right-4 bg-background/80 backdrop-blur-md px-3 py-1 font-meta-technical text-meta-technical border border-primary/20">
+                                    00:01:12 // RAW
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="font-headline-lg text-2xl uppercase font-bold text-primary mb-1">FLUX
+                                        REEL</h3>
+                                    <p
+                                        class="font-meta-technical text-meta-technical text-on-surface-variant uppercase tracking-widest">
+                                        MOTION · 2023</p>
+                                </div>
+                                <span class="text-primary material-symbols-outlined"
+                                    aria-hidden="true">arrow_outward</span>
+                            </div>
+                        </a>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- Capabilities -->
+            <section class="bg-surface-container-low py-24 border-y border-outline-variant">
+                <div class="px-margin-mobile mb-16">
+                    <h2 class="font-meta-technical text-meta-technical text-primary uppercase tracking-widest mb-2">//
+                        CAPABILITIES</h2>
+                    <p class="font-headline-lg text-3xl uppercase font-black">PRECISION SERVICES</p>
+                </div>
+                <!-- FIX: Service tiles are now <a> tags linking to editing_service.html (were <div> with <h4>) -->
+                <div class="grid grid-cols-2 px-margin-mobile gap-px bg-outline-variant border border-outline-variant">
+                    <a href="/editing_service.html"
+                        class="bg-background p-6 flex flex-col justify-between aspect-square scroll-reveal hover:bg-surface-container transition-colors duration-300">
+                        <span class="font-meta-technical text-meta-technical text-primary">01/</span>
+                        <h3 class="font-headline-lg text-xl uppercase font-bold leading-none">VIDEO<br />EDITING</h3>
+                    </a>
+                    <a href="/editing_service.html"
+                        class="bg-background p-6 flex flex-col justify-between aspect-square scroll-reveal hover:bg-surface-container transition-colors duration-300">
+                        <span class="font-meta-technical text-meta-technical text-primary">02/</span>
+                        <h3 class="font-headline-lg text-xl uppercase font-bold leading-none">GRAPHIC<br />DESIGN</h3>
+                    </a>
+                    <a href="/editing_service.html"
+                        class="bg-background p-6 flex flex-col justify-between aspect-square scroll-reveal hover:bg-surface-container transition-colors duration-300">
+                        <span class="font-meta-technical text-meta-technical text-primary">03/</span>
+                        <h3 class="font-headline-lg text-xl uppercase font-bold leading-none">MOTION<br />GRAPHICS</h3>
+                    </a>
+                    <a href="/editing_service.html"
+                        class="bg-background p-6 flex flex-col justify-between aspect-square scroll-reveal hover:bg-surface-container transition-colors duration-300">
+                        <span class="font-meta-technical text-meta-technical text-primary">04/</span>
+                        <h3 class="font-headline-lg text-xl uppercase font-bold leading-none">LOGO<br />DESIGN</h3>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Footer CTA -->
+            <section class="py-32 px-margin-mobile flex flex-col items-center text-center scroll-reveal">
+                <h2 class="font-display-xl-mobile text-[48px] uppercase font-black leading-none mb-12">READY
+                    TO<br /><span class="text-primary">START THE REEL?</span></h2>
+                <!-- FIX: CTA is now an <a> tag linking to contact.html (was a non-functional <button>) -->
+                <a href="/contact.html"
+                    class="w-full bg-primary-container text-on-primary-container font-headline-lg text-xl uppercase py-6 flex items-center justify-center gap-4 group scale-95 active:scale-90 transition-transform">
+                    GET IN TOUCH
+                    <span class="material-symbols-outlined transition-transform group-hover:translate-x-2"
+                        aria-hidden="true">arrow_forward</span>
+                </a>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-surface-container-lowest border-t border-outline-variant">
+            <div class="px-margin-mobile py-16 flex flex-col gap-12">
+                <div>
+                    <div class="font-display-xl text-body-md font-bold text-on-surface mb-4">THE REEL</div>
+                    <p class="font-meta-technical text-meta-technical text-secondary uppercase tracking-widest">©2024
+                        THE REEL // CINEMATIC PRECISION</p>
+                </div>
+                <!-- FIX: Consistent social links across mobile & desktop (were: mobile had Vimeo/LinkedIn, desktop had Behance/Email)
+                     FIX: External links now have target="_blank" rel="noopener noreferrer" (security) -->
+                <div class="flex flex-wrap gap-x-8 gap-y-4">
+                    <a class="font-meta-technical text-meta-technical text-secondary hover:text-tertiary transition-colors opacity-80 hover:opacity-100"
+                        href="https://instagram.com/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
+                    <a class="font-meta-technical text-meta-technical text-secondary hover:text-tertiary transition-colors opacity-80 hover:opacity-100"
+                        href="https://vimeo.com/" target="_blank" rel="noopener noreferrer">VIMEO</a>
+                    <a class="font-meta-technical text-meta-technical text-secondary hover:text-tertiary transition-colors opacity-80 hover:opacity-100"
+                        href="https://behance.net/" target="_blank" rel="noopener noreferrer">BEHANCE</a>
+                    <a class="font-meta-technical text-meta-technical text-secondary hover:text-tertiary transition-colors opacity-80 hover:opacity-100"
+                        href="/contact.html">CONTACT</a>
+                </div>
+                <div class="pt-8 border-t border-outline-variant flex justify-between items-center">
+                    <div class="w-2 h-2 bg-primary" aria-hidden="true"></div>
+                    <p class="font-meta-technical text-[10px] text-on-surface-variant uppercase">SYSTEM STATUS: OPTIMAL
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            // Mobile Menu Toggle — with ARIA state management
+            const menuToggle = document.getElementById('menu-toggle');
+            const menuClose = document.getElementById('menu-close');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.remove('translate-x-full');
+                menuToggle.setAttribute('aria-expanded', 'true');
+                // Trap focus inside dialog
+                menuClose.focus();
+            });
+
+            menuClose.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.focus();
+            });
+
+            // FIX: Close menu on Escape key (UX + accessibility improvement)
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !mobileMenu.classList.contains('translate-x-full')) {
+                    mobileMenu.classList.add('translate-x-full');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    menuToggle.focus();
+                }
+            });
+
+            // FIX: JS scroll listener now gated — only runs if CSS scroll-driven animations
+            // are NOT supported (progressive enhancement pattern).
+            if (!CSS.supports('animation-timeline', 'scroll()')) {
+                window.addEventListener('scroll', () => {
+                    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                    const scrolled = (winScroll / height) * 100;
+                    const el = document.getElementById("playhead");
+                    if (el) el.style.width = scrolled + "%";
+                }, { passive: true });
+            }
+
+            // FIX: IntersectionObserver for scroll reveal (consistent with desktop — was already using this)
+            const mobileObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.scroll-reveal').forEach(el => mobileObserver.observe(el));
+        </script>
+
+    </div>
+
+    <!-- ================================================ -->
+    <!-- DESKTOP VERSION (hidden on < md screens)         -->
+    <!-- ================================================ -->
+    <div class="hidden md:block">
+
+        <!-- Playhead progress bar at top -->
+        <div class="fixed top-0 left-0 h-[2px] bg-magenta z-50 w-0" id="scroll-progress" role="progressbar"
+            aria-label="Page scroll progress" aria-valuemin="0" aria-valuemax="100"></div>
+
+        <!-- TopNavBar -->
+        <!-- FIX: Nav links are now ALL CAPS (were Title Case — violates spec) and link to real pages -->
+        <nav class="fixed top-0 left-0 w-full z-40 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 bg-obsidian/90 backdrop-blur-md border-b-[1px] border-outline-variant"
+            role="navigation" aria-label="Main navigation">
+            <a class="font-headline-lg text-headline-lg font-bold uppercase tracking-tighter text-on-background"
+                href="/index.html" aria-current="page">
+                THE REEL
+            </a>
+            <div class="hidden md:flex gap-8">
+                <a class="text-primary border-b-2 border-magenta pb-1 font-meta-technical text-meta-technical uppercase tracking-widest"
+                    href="/work.html">WORK</a>
+                <a class="text-on-surface-variant hover:text-on-background transition-colors duration-300 font-meta-technical text-meta-technical uppercase tracking-widest"
+                    href="/editing_service.html">SERVICES</a>
+                <a class="text-on-surface-variant hover:text-on-background transition-colors duration-300 font-meta-technical text-meta-technical uppercase tracking-widest"
+                    href="/about.html">ABOUT</a>
+                <a class="text-on-surface-variant hover:text-on-background transition-colors duration-300 font-meta-technical text-meta-technical uppercase tracking-widest"
+                    href="/contact.html">CONTACT</a>
+            </div>
+            <!-- FIX: Theme switcher now fully functional with localStorage persistence (was: no JS attached) -->
+            <button id="theme-toggle" aria-label="Toggle light/dark theme"
+                class="hover:text-magenta transition-colors duration-300 text-on-surface-variant">
+                <span class="material-symbols-outlined" id="theme-icon" aria-hidden="true">light_mode</span>
+            </button>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="relative h-screen w-full flex flex-col justify-center overflow-hidden pt-20">
+            <!-- Filmstrip Background -->
+            <!-- FIX: background-image divs now have role="img" and aria-label (were inaccessible decorative bg divs) -->
+            <!-- FIX: Duplicate filmstrip panels have aria-hidden="true" -->
+            <div class="absolute inset-0 z-0 opacity-20 pointer-events-none" aria-hidden="true">
+                <div class="flex h-full w-[200%] filmstrip-pan gap-4 py-8">
+                    <div class="h-full w-1/4 bg-cover bg-center grayscale mix-blend-screen"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBqyyJFBr38zK6QMoyh-qa1-9a7sIcvWwRLNy8q46d0vR9h6DKPS1vJP_wmXoioIS13P688yUutaMvr-mIeuvUh3sUuvla7M79rEVOKzpERHRYd_NQ1qbPoq8Qhy_MV6oUrMWwWsh7LORexL9sq7dKhpqiu-pdwGcarTVXjFzbBuIPrVpDRbGylZfU6MwktBl3023Hm6djM0-m_DSzv9OKSX-94by9A4JV71WSRC2z9gNWuqIgunSn3qnwxv_azdksTuawDm3GedB4')">
+                    </div>
+                    <div class="h-full w-1/4 bg-cover bg-center grayscale mix-blend-screen"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA4-YLwqXZDYVXwIwu5IwY1d60egoc5yzA80XFGElK5hQRIRXnFhvv6rO1YbNkWT8sKikRJoedKaC1dy1ouzrG2nkwC6KW4D9jtRq39brj2Z57YDyXOt0208ZHpAzVmh6QRznpv6ScTJfp-E5VBqHJkaVWDhz2yVKvkh6JRB8VUpAEkzfaYw_wGa4NPG6yld3RkSiOu_hCKXbEl9OvB3asm3355TbpODoaBUkZL-qfhQWjDwmTgz3xfGVK2rHUY3vKGOEF7WyEctsk')">
+                    </div>
+                    <div class="h-full w-1/4 bg-cover bg-center grayscale mix-blend-screen"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBEgl9yVm5S58Ur0fPVB-JTenEpMypdZoQm0elkUUtBOazFiCWVao8MyKMuMVh6E4IKuSLEfC4CqW8BpGoZFJB-2fLLykcHKBgxWyedFqM-njjRlrB5yaIE3EyRCcXtkZ7TjiLkr_Rq2Q7SysMwgqSiGz-pPta6mUVO7Xcjx-SwLamJBPuuWSDpAf2FJRCXyWiKzLBx_VsXCTjtn1AheDKjfAaEYb5UyfK2KNIS7SANoNDZaT9NQgvDH_Vc3n0Lt5iP5xxBWIZjBMc')">
+                    </div>
+                    <div class="h-full w-1/4 bg-cover bg-center grayscale mix-blend-screen"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCk1C-0kbHE7AJ9xX08KAavZ8f4phth-s3Cem6aJy_ImgcIYrlhu3T6cLiBGUBWQola_TjKKaR4n_dL4Tg5o6sX9bJ6Our6vYVb8HAPKqtZh7q2qMaTO7Ngv_Wohhy3iyXHEgJKKt4Klh2NCmX4WcJI-7P3HJ8jGZVV8-DA6h5HHnkSUeSmIomJbWS7ITq_7vwbqPW8rtXov-apZo0xs-NJhOil3Bgro47JHvHLPyaWXGown3xVfmHr3Ky6jGpiaFn43LoCmUFIxrM')">
+                    </div>
+                    <!-- Duplicates for seamless loop animation -->
+                    <div class="h-full w-1/4 bg-cover bg-center grayscale mix-blend-screen"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBsP1l4TM3yXdlo3QnP2NtDa1KonLmf8CqkUZ3JI1ZfKCMI9AzWLl-2Lt7F2P3kIqkfNclB3c-_0sF3w8zKhr3kFNkRB9Vxt1crDxUm3eZJJnz3Psogvxg12Z0tRzYn9atzuxaLFVnnj4BFptabGm77hB7YJ0M9P1GXFK3G2XRrcZ1XCh155-i6qK9HoXOfXbLHCxYazrAH6F39jnDpAJOsNNaf0L7HbkVD1ItIMibTa_-oid86H3RFmhLKd-CnCeX5pLDohX28pig')">
+                    </div>
+                    <div class="h-full w-1/4 bg-cover bg-center grayscale mix-blend-screen"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAxqU-a8zaTfbJsLs01S2EEhrK5zZ_57fN_wZkoFt9_HJ0toYgRHqBOAW1PJzCCSbjvdvLrOcRO4G4teZYlk-f0Fql1v1AWkrFi8EvKZf6_rEmnmUgTmUSSsZyZOp7TLlWJIAp6zJ_50Nd6li5VRXF4v2G2gCcPHW9MdVmVcReaV-YWOmty_JZ1l95cQpBofG1ziUxJw2UpmII7D5PK-Vru0LgP3J4')">
+                    </div>
+                    <div class="h-full w-1/4 bg-cover bg-center grayscale mix-blend-screen"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDVISkX1hti1cA2OHcfsnLJWLeS8tzRGhIP6x5hU3-02DrWt9wxHzdATkznVuaDyprPvtnWcPgBOzAZ2jgHguLYNpW4NhCpKsLrR25KUQXNOAr1A2tIwImLevtaNrpMQEtW8ovq7P4bYJkXelynbJeUDyqOicxaYxDC1hl-op0_CnS3IRPju9Nl72FsKv5WzIg0bq5mVxGRI31CA4hRxtmt8vAUgm3xrBnkjv6CWpfomcnC8_P1o0V1zHnWWHjsBrbNEYRps4Lm0ik')">
+                    </div>
+                    <div class="h-full w-1/4 bg-cover bg-center grayscale mix-blend-screen"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAZjbcebBB2kKusPSadsqjPkCh4Ld9kHjz1VhWViT7A5yimObIrJdCy4KtJFuQfgea1sa9xYlRCoRMsdhhZhGFQMTgdK_x3AqNaL9HkKvLxcc06kQJhxo5alThqlR_j-dTeDYuXVFSo_UXcvbsKOEeIlFzBI0k6-bZovtpB6WexYptkRVDfWybtxiNuC4cxcPqEfn03C8-HepVaIMTDeRHm9XKvybmWQVcYBSSMwRNM8lRSvTeCxQetOj_NNonUJRBfs2WWiTGEpDM')">
+                    </div>
+                </div>
+            </div>
+            <div class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto w-full">
+                <h1
+                    class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl uppercase text-on-background mb-4 tracking-tighter leading-none">
+                    ARRYAN
+                </h1>
+                <div class="relative w-max">
+                    <p
+                        class="font-meta-technical text-meta-technical text-on-surface-variant uppercase tracking-widest mb-2">
+                        VIDEO EDITING / GRAPHIC DESIGN / MOTION / LOGO
+                    </p>
+                    <div class="h-[2px] bg-magenta playhead-animation" aria-hidden="true"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Intro Section -->
+        <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-obsidian reveal">
+            <div class="max-w-max-width mx-auto">
+                <div class="md:w-2/3 border-l-[1px] border-outline-variant pl-8">
+                    <p class="font-headline-lg text-headline-lg text-on-background mb-8 leading-tight">
+                        I cut stories and craft identities with precision. My work lives at the intersection of
+                        technical motion and editorial design.
+                    </p>
+                    <div class="flex gap-4">
+                        <span
+                            class="border-[1px] border-outline-variant px-3 py-1 font-meta-technical text-meta-technical text-on-surface-variant">TIMELINES</span>
+                        <span
+                            class="border-[1px] border-outline-variant px-3 py-1 font-meta-technical text-meta-technical text-on-surface-variant">KEYFRAMES</span>
+                        <span
+                            class="border-[1px] border-outline-variant px-3 py-1 font-meta-technical text-meta-technical text-on-surface-variant">VECTORS</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Selected Work Section -->
+        <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-lowest reveal">
+            <div class="max-w-max-width mx-auto">
+                <div class="flex items-center justify-between mb-16 border-b-[1px] border-outline-variant pb-4">
+                    <h2
+                        class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl uppercase tracking-tighter text-on-background text-6xl md:text-[80px]">
+                        SELECTED WORK</h2>
+                    <span class="font-meta-technical text-meta-technical text-on-surface-variant hidden md:block">01 //
+                        04</span>
+                </div>
+                <!-- Asymmetric Filmstrip Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-grid-gutter">
+
+                    <!-- FIX: Project tiles are now <a> tags (were non-interactive <div class="cursor-pointer">)
+                         FIX: Images have proper alt text (were data-alt) and loading="lazy" + dimensions -->
+
+                    <!-- Tile 1 (8/12 width) -->
+                    <a href="/project_detail.html"
+                        class="md:col-span-8 group hover-video-preview relative cursor-pointer reveal">
+                        <div
+                            class="aspect-video bg-surface overflow-hidden relative border-[1px] border-outline-variant transition-colors duration-300 group-hover:border-magenta">
+                            <img class="w-full h-full object-cover transition-opacity duration-300"
+                                alt="Bold brutalist brand identity for DIPZZ — intense red and black palette with oversized geometric fonts"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLx8QuQwYpBgLeFHym7ZATZ0DFAe0Rai_fTmWToh3fngiUksDM-eCz3Vp4a2eRjS_Vk8eqDLvMcOamnUaepjEEpOOTmq3jdyOQgmi4jcgOITkMA-NhknqStsXyzIddIgDW0TG6pm3vEieely1n5lzND-chS2z_dVZgMUq_gCiZzLkCU4ig4jz3F72xKoO1DcHTiShrfOV49wRBfMlBgevvZ8oiXahBxaXcdHQvhTguMoUvXVd5fE_9muAVYfoWi-s_p8eoD88X1kU"
+                                loading="lazy" width="800" height="450" />
+                            <div
+                                class="absolute inset-0 bg-magenta/10 opacity-0 video-overlay transition-opacity duration-300 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-on-background text-6xl"
+                                    aria-hidden="true">play_circle</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex justify-between items-start">
+                            <div>
+                                <h3 class="font-headline-lg text-headline-lg text-on-background text-2xl md:text-3xl">
+                                    DIPZZ</h3>
+                                <p class="font-meta-technical text-meta-technical text-on-surface-variant mt-1">BRAND ·
+                                    2026</p>
+                            </div>
+                            <span
+                                class="font-meta-technical text-meta-technical text-on-surface-variant bg-surface-container px-2 py-1">00:01:24</span>
+                        </div>
+                    </a>
+
+                    <!-- Tile 2 (4/12 width) -->
+                    <a href="/project_detail.html"
+                        class="md:col-span-4 group hover-video-preview relative cursor-pointer reveal"
+                        style="transition-delay: 100ms;">
+                        <div
+                            class="aspect-[4/5] bg-surface overflow-hidden relative border-[1px] border-outline-variant transition-colors duration-300 group-hover:border-magenta">
+                            <img class="w-full h-full object-cover transition-opacity duration-300"
+                                alt="Abstract 3D vortex simulation for VAULT VORTEX — metallic textures with magenta neon highlights"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1tFCFaIMftM-F8aJP74gcWNLl6te3h6QsrwAq0ZUdRXjXvQVWJMvOBCX0TF3XUgtVCZuxCoixU4lNM09mTd7Ni86wx0VdgjDnfteZ2FKsi7L8BswTMJT1kDfxGIIsrZ-VzELyQTlKLbUFuKo3Un35tOeJNL5XMWMSnlLmV421LH5EwHDejd2ajOckM_fyZgnxvQbq7jyCwaIyKDvIRDjYwO-dXo6erF2SNT7H4iFjXx9u1wR5noi9pRBGloQg8gZscJqZAAOzgAA"
+                                loading="lazy" width="400" height="500" />
+                            <div
+                                class="absolute inset-0 bg-magenta/10 opacity-0 video-overlay transition-opacity duration-300 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-on-background text-6xl"
+                                    aria-hidden="true">play_circle</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex justify-between items-start">
+                            <div>
+                                <h3 class="font-headline-lg text-headline-lg text-on-background text-2xl md:text-3xl">
+                                    VAULT VORTEX</h3>
+                                <p class="font-meta-technical text-meta-technical text-on-surface-variant mt-1">IDENTITY
+                                    · 2025</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Tile 3 (4/12 width) -->
+                    <a href="/project_detail.html"
+                        class="md:col-span-4 group hover-video-preview relative cursor-pointer reveal">
+                        <div
+                            class="aspect-square bg-surface overflow-hidden relative border-[1px] border-outline-variant transition-colors duration-300 group-hover:border-magenta">
+                            <img class="w-full h-full object-cover transition-opacity duration-300"
+                                alt="Minimalist podcast cover art — vintage microphone close-up on stark black background with sharp modern typography"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDO2uWHG9zbTU6vmr0T75nxRaXCxbjwh3C6RhbYVICyJGKWrrDTfg4YVM55PYU3qW7LNHqZhWBryBU0Uww9NLYhVbLd--mf5lv9XwJ8CnpHayBsg24ilnqEvqiu05vqq3wMbIV7iyYHaN8X7DUjuBxxmX4bUbVzXIsqbrzEPibiFPR5C3anezhjrKS8d8ZD6jXChjtxeSh1KOObysjrSXBynil_9xvOrg6h6Kkp0ueoBZ_4-0wcXyKBKnnhlqQgi5k2pclh8XnkUnU"
+                                loading="lazy" width="400" height="400" />
+                            <div
+                                class="absolute inset-0 bg-magenta/10 opacity-0 video-overlay transition-opacity duration-300 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-on-background text-6xl"
+                                    aria-hidden="true">play_circle</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex justify-between items-start">
+                            <div>
+                                <h3 class="font-headline-lg text-headline-lg text-on-background text-2xl md:text-3xl">
+                                    PODCAST SERIES</h3>
+                                <p class="font-meta-technical text-meta-technical text-on-surface-variant mt-1">EDIT ·
+                                    2026</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Tile 4 (8/12 width) -->
+                    <a href="/project_detail.html"
+                        class="md:col-span-8 group hover-video-preview relative cursor-pointer reveal"
+                        style="transition-delay: 100ms;">
+                        <div
+                            class="aspect-[21/9] bg-surface overflow-hidden relative border-[1px] border-outline-variant transition-colors duration-300 group-hover:border-magenta">
+                            <img class="w-full h-full object-cover transition-opacity duration-300"
+                                alt="Complex NLE timeline on screen — hundreds of clips, audio waveforms and vibrant magenta playhead lines on deep slate"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA89iW6gJPPnfgX0JuKUQro-ZMaUxXgbYfx2IdIL9XQa010hjGeqeBKzGvKyYZtfIAw6wIfQiBvaUO1WgUXhfveLTS7dSju0V98_kPet3FJhZ0AT0XS2sK_WsDGS5iSLaytYwa0BTkArBV1WridoJfuVB2i-zwjkIGhxqoNVNdVnV__pbkpVCZIP6mfoeDYCtce91Kq0zXbHPHJDaO49QmQiRFjTpEV16JrM7prMz1Fkwoni8vK0VYkQmXuCR-c27YyyoQ_W2s8GLU"
+                                loading="lazy" width="800" height="343" />
+                            <div
+                                class="absolute inset-0 bg-magenta/10 opacity-0 video-overlay transition-opacity duration-300 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-on-background text-6xl"
+                                    aria-hidden="true">play_circle</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex justify-between items-start">
+                            <div>
+                                <h3 class="font-headline-lg text-headline-lg text-on-background text-2xl md:text-3xl">
+                                    MOTION SHOWREEL</h3>
+                                <p class="font-meta-technical text-meta-technical text-on-surface-variant mt-1">MOTION ·
+                                    2025</p>
+                            </div>
+                            <span
+                                class="font-meta-technical text-meta-technical text-on-surface-variant bg-surface-container px-2 py-1">00:03:00
+                                // 4K</span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-obsidian reveal">
+            <div class="max-w-max-width mx-auto">
+                <h2
+                    class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl uppercase tracking-tighter text-on-background mb-16 text-5xl md:text-[64px]">
+                    CAPABILITIES</h2>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-0 border-t-[1px] border-l-[1px] border-outline-variant">
+                    <a class="block p-8 border-r-[1px] border-b-[1px] border-outline-variant hover:bg-surface-container transition-colors duration-300 group"
+                        href="/editing_service.html">
+                        <div
+                            class="font-meta-technical text-meta-technical text-on-surface-variant mb-8 group-hover:text-magenta transition-colors">
+                            01</div>
+                        <!-- FIX: Service headings are now ALL CAPS (was Title Case — violates spec) -->
+                        <h3 class="font-headline-lg text-headline-lg text-on-background text-2xl uppercase">VIDEO
+                            EDITING</h3>
+                        <div
+                            class="mt-8 opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-[-10px] group-hover:translate-x-0 duration-300">
+                            <span class="material-symbols-outlined text-magenta" aria-hidden="true">arrow_forward</span>
+                        </div>
+                    </a>
+                    <a class="block p-8 border-r-[1px] border-b-[1px] border-outline-variant hover:bg-surface-container transition-colors duration-300 group"
+                        href="/editing_service.html">
+                        <div
+                            class="font-meta-technical text-meta-technical text-on-surface-variant mb-8 group-hover:text-magenta transition-colors">
+                            02</div>
+                        <h3 class="font-headline-lg text-headline-lg text-on-background text-2xl uppercase">GRAPHIC
+                            DESIGN</h3>
+                        <div
+                            class="mt-8 opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-[-10px] group-hover:translate-x-0 duration-300">
+                            <span class="material-symbols-outlined text-magenta" aria-hidden="true">arrow_forward</span>
+                        </div>
+                    </a>
+                    <a class="block p-8 border-r-[1px] border-b-[1px] border-outline-variant hover:bg-surface-container transition-colors duration-300 group"
+                        href="/editing_service.html">
+                        <div
+                            class="font-meta-technical text-meta-technical text-on-surface-variant mb-8 group-hover:text-magenta transition-colors">
+                            03</div>
+                        <h3 class="font-headline-lg text-headline-lg text-on-background text-2xl uppercase">MOTION
+                            GRAPHICS</h3>
+                        <div
+                            class="mt-8 opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-[-10px] group-hover:translate-x-0 duration-300">
+                            <span class="material-symbols-outlined text-magenta" aria-hidden="true">arrow_forward</span>
+                        </div>
+                    </a>
+                    <a class="block p-8 border-r-[1px] border-b-[1px] border-outline-variant hover:bg-surface-container transition-colors duration-300 group"
+                        href="/editing_service.html">
+                        <div
+                            class="font-meta-technical text-meta-technical text-on-surface-variant mb-8 group-hover:text-magenta transition-colors">
+                            04</div>
+                        <h3 class="font-headline-lg text-headline-lg text-on-background text-2xl uppercase">LOGO DESIGN
+                        </h3>
+                        <div
+                            class="mt-8 opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-[-10px] group-hover:translate-x-0 duration-300">
+                            <span class="material-symbols-outlined text-magenta" aria-hidden="true">arrow_forward</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section
+            class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-lowest reveal text-center border-y-[1px] border-outline-variant">
+            <div class="max-w-3xl mx-auto">
+                <h2
+                    class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl uppercase tracking-tighter text-on-background mb-8 leading-none">
+                    START THE REEL</h2>
+                <!-- FIX: CTA is now an <a> tag linking to contact.html (was a non-functional <button>) -->
+                <a href="/contact.html"
+                    class="inline-block bg-magenta text-obsidian font-headline-lg text-xl uppercase px-12 py-4 hover:bg-on-background transition-colors duration-300 tracking-wider">
+                    GET IN TOUCH
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <!-- FIX: Consistent social links (Instagram, Vimeo, Behance, Contact) across both breakpoints -->
+        <!-- FIX: External links have target="_blank" rel="noopener noreferrer" -->
+        <!-- FIX: Removed inline onclick="window.scrollTo(...)" — was a CSP violation -->
+        <footer
+            class="w-full px-margin-mobile md:px-margin-desktop py-section-gap flex flex-col md:flex-row justify-between items-start gap-grid-gutter bg-surface-container border-t border-outline-variant">
+            <div>
+                <div class="font-headline-lg text-headline-lg font-bold text-primary mb-4">THE REEL</div>
+                <p class="font-meta-technical text-meta-technical text-on-surface-variant">© 2024 THE REEL. ALL RIGHTS
+                    RESERVED.</p>
+            </div>
+            <div class="flex flex-col md:flex-row gap-8">
+                <a class="text-on-surface-variant hover:text-primary underline underline-offset-4 transition-opacity duration-300 hover:opacity-80 font-meta-technical text-meta-technical"
+                    href="https://behance.net/" target="_blank" rel="noopener noreferrer">BEHANCE</a>
+                <a class="text-on-surface-variant hover:text-primary underline underline-offset-4 transition-opacity duration-300 hover:opacity-80 font-meta-technical text-meta-technical"
+                    href="https://instagram.com/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
+                <a class="text-on-surface-variant hover:text-primary underline underline-offset-4 transition-opacity duration-300 hover:opacity-80 font-meta-technical text-meta-technical"
+                    href="https://vimeo.com/" target="_blank" rel="noopener noreferrer">VIMEO</a>
+                <a class="text-on-surface-variant hover:text-primary underline underline-offset-4 transition-opacity duration-300 hover:opacity-80 font-meta-technical text-meta-technical"
+                    href="/contact.html">CONTACT</a>
+            </div>
+        </footer>
+
+        <script>
+            // FIX: Theme Toggle — fully implemented (was: icon existed but no JS)
+            // Persists preference in localStorage. Triggers 300ms CSS transition as per Stitch spec.
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeIcon = document.getElementById('theme-icon');
+            const html = document.documentElement;
+
+            // Apply saved preference on load
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                html.classList.remove('dark');
+                themeIcon.textContent = 'dark_mode';
+            }
+
+            themeToggle.addEventListener('click', () => {
+                const isDark = html.classList.toggle('dark');
+                themeIcon.textContent = isDark ? 'light_mode' : 'dark_mode';
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            });
+
+            // FIX: Scroll Progress Bar — JS fallback only runs if CSS scroll-driven animations
+            // are NOT supported (feature-detected via CSS.supports). On modern browsers, the
+            // CSS @supports block in <style> handles this natively with zero JS overhead.
+            if (!CSS.supports('animation-timeline', 'scroll()')) {
+                window.addEventListener('scroll', () => {
+                    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                    const scrolled = (winScroll / height) * 100;
+                    const el = document.getElementById("scroll-progress");
+                    if (el) el.style.width = scrolled + "%";
+                }, { passive: true });
+            }
+
+            // FIX: Scroll Reveal uses IntersectionObserver (replaces old getBoundingClientRect() loop
+            // inside a scroll event that fired on every pixel of scroll — caused jank on low-end devices).
+            // Elements are unobserved after reveal to free memory.
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+        </script>
+
+    </div>
+
+</body>
+
+</html>
